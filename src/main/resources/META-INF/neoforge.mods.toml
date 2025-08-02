@@ -13,6 +13,8 @@ license="MIT"
 modId="dpsvarmod" #mandatory
 version="0.0.0.1" #mandatory
 displayName="DP's Variety Mod"
+# A file name (in the root of the mod JAR) containing a logo for display
+logoFile="icon.png" #Well I'm stupid
 
 # A URL to query for updates for this mod. See the JSON update specification https://docs.neoforged.net/docs/misc/updatechecker/
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
@@ -20,8 +22,6 @@ displayName="DP's Variety Mod"
 # A URL for the "homepage" for this mod, displayed in the mod UI
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 
-# A file name (in the root of the mod JAR) containing a logo for display
-logoFile="modIcon.png" #optional
 
 # A text field displayed in the mod UI
 #credits="" #optional
@@ -30,7 +30,8 @@ logoFile="modIcon.png" #optional
 authors="mateo360p" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
-description='This little creation adds "new features" to Minecraft :D.\nWorks more like a modpack tho.'
+description='''This little creation adds "new features" to Minecraft :D
+Works more like a modpack tho.'''
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
 #[[mixins]]

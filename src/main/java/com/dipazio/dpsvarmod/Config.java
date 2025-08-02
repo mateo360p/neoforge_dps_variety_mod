@@ -1,4 +1,4 @@
-package com.mateo360p.dpsvarmod;
+package com.dipazio.dpsvarmod;
 
 import java.util.List;
 import java.util.Set;
