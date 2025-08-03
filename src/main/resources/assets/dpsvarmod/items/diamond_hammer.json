@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "dpsvarmod:item/diamond_hammer"
+    "model": "dpsvarmod:item/hammer/diamond_hammer"
   }
 }

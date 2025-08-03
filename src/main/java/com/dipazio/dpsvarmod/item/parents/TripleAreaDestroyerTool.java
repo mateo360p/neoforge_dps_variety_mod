@@ -1,5 +1,7 @@
 package com.dipazio.dpsvarmod.item.parents;
 
+import com.dipazio.dpsvarmod.item.material.TripleAreaToolMaterial;
+import com.dipazio.dpsvarmod.item.parents.grand.DpDiggerItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientboundBlockUpdatePacket;
@@ -7,7 +9,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.level.ClipContext;
@@ -26,9 +27,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 // SoOOoOoO I'm adding hammers and diggers! (Pretty original Ik)
-public class TripleAreaDestroyerTool extends DiggerItem {
+public class TripleAreaDestroyerTool extends DpDiggerItem {
     public TripleAreaDestroyerTool(ToolMaterial tier, TagKey<Block> blockTag, float attackDamage, float attackSpeed, Properties properties) {
         super(tier, blockTag, attackDamage, attackSpeed, properties);
+        //if (tier == ToolMaterial.WOOD || tier == TripleAreaToolMaterial.WOOD) this.burnTime = 200;
     }
 
     @Override

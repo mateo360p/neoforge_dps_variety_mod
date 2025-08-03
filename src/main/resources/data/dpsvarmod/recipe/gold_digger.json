@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:stick",
+    "H": "minecraft:gold_block"
+  },
+  "pattern": [
+    " H ",
+    " # ",
+    " # "
+  ],
+  "result": {
+    "count": 1,
+    "id": "dpsvarmod:golden_digger"
+  }
+}

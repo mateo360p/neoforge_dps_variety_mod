@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:stick",
+    "H": "#minecraft:logs"
+  },
+  "pattern": [
+    " H ",
+    " # ",
+    " # "
+  ],
+  "result": {
+    "count": 1,
+    "id": "dpsvarmod:wooden_digger"
+  }
+}

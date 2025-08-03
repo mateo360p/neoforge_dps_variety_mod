@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "dpsvarmod:item/wooden_hammer"
+    "model": "dpsvarmod:item/hammer/wooden_hammer"
   }
 }

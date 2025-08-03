@@ -25,7 +25,7 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 @Mod(DPsVarietyMod.MODID)
 public class DPsVarietyMod
 {
-    public static final String CODE_VERSION = "0.0.0.1"; // Just to verify the code version, this doesn't do anything!
+    public static final String CODE_VERSION = "0.0.0.2"; // Just to verify the code version, this doesn't do anything!
     // Yes, i'm following a tutorial ok?
     public static final String MODID = "dpsvarmod";
     private static final Logger LOGGER = LogUtils.getLogger();
@@ -57,11 +57,6 @@ public class DPsVarietyMod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            //event.accept(DPsItems.OIL_BOTTLE);
-        } else if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            event.accept(DPsItems.IRON_HAMMER);
-        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

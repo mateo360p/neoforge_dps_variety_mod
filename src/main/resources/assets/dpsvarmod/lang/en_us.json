@@ -1,8 +1,15 @@
 {
+  "item.dpsvarmod.wooden_digger": "Wooden Digger",
+  "item.dpsvarmod.stone_digger": "Stone Digger",
+  "item.dpsvarmod.iron_digger": "Iron Digger",
+  "item.dpsvarmod.golden_digger": "Golden Digger",
+  "item.dpsvarmod.diamond_digger": "Diamond Digger",
+
   "item.dpsvarmod.wooden_hammer": "Wooden Hammer",
   "item.dpsvarmod.stone_hammer": "Stone Hammer",
   "item.dpsvarmod.iron_hammer": "Iron Hammer",
   "item.dpsvarmod.golden_hammer": "Golden Hammer",
   "item.dpsvarmod.diamond_hammer": "Diamond Hammer",
+
   "creativetab.dpsvarmod.modtab": "DP's Tab"
 }

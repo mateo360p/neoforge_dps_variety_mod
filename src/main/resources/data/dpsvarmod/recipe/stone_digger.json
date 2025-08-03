@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:stick",
+    "H": "minecraft:stone"
+  },
+  "pattern": [
+    " H ",
+    " # ",
+    " # "
+  ],
+  "result": {
+    "count": 1,
+    "id": "dpsvarmod:stone_digger"
+  }
+}

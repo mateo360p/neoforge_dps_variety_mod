@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:stick",
+    "H": "minecraft:iron_block"
+  },
+  "pattern": [
+    " H ",
+    " # ",
+    " # "
+  ],
+  "result": {
+    "count": 1,
+    "id": "dpsvarmod:iron_digger"
+  }
+}

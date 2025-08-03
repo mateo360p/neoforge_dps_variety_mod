@@ -16,9 +16,15 @@ public class ModCreativeModeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, DPsVarietyMod.MODID);
 
     public static final Supplier<CreativeModeTab> DPS_TAB = CREATIVE_MODE_TABS.register("dps_tab",
-        () -> CreativeModeTab.builder().icon(() -> new ItemStack(DPsItems.IRON_HAMMER.get()))
+        () -> CreativeModeTab.builder().icon(() -> new ItemStack(DPsItems.GOLDEN_HAMMER.get()))
                 .title(Component.translatable("creativetab.dpsvarmod.modtab"))
                 .displayItems((itemDisplayParameters, output) -> {
+                    output.accept(DPsItems.WOODEN_DIGGER);
+                    output.accept(DPsItems.STONE_DIGGER);
+                    output.accept(DPsItems.IRON_DIGGER);
+                    output.accept(DPsItems.GOLDEN_DIGGER);
+                    output.accept(DPsItems.DIAMOND_DIGGER);
+
                     output.accept(DPsItems.WOODEN_HAMMER);
                     output.accept(DPsItems.STONE_HAMMER);
                     output.accept(DPsItems.IRON_HAMMER);
