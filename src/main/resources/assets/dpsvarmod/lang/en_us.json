@@ -11,5 +11,11 @@
   "item.dpsvarmod.golden_hammer": "Golden Hammer",
   "item.dpsvarmod.diamond_hammer": "Diamond Hammer",
 
+  "item.dpsvarmod.wooden_chopper": "Wooden Chopper",
+  "item.dpsvarmod.stone_chopper": "Stone Chopper",
+  "item.dpsvarmod.iron_chopper": "Iron Chopper",
+  "item.dpsvarmod.golden_chopper": "Golden Chopper",
+  "item.dpsvarmod.diamond_chopper": "Diamond Chopper",
+
   "creativetab.dpsvarmod.modtab": "DP's Tab"
 }

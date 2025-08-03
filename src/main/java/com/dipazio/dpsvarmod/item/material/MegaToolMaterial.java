@@ -4,7 +4,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ToolMaterial;
 
-public class TripleAreaToolMaterial {
+public class MegaToolMaterial {
     public static final ToolMaterial WOOD;
     public static final ToolMaterial STONE;
     public static final ToolMaterial IRON;

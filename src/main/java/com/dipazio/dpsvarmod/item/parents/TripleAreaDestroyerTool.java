@@ -1,6 +1,5 @@
 package com.dipazio.dpsvarmod.item.parents;
 
-import com.dipazio.dpsvarmod.item.material.TripleAreaToolMaterial;
 import com.dipazio.dpsvarmod.item.parents.grand.DpDiggerItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
@@ -30,12 +29,11 @@ import java.util.List;
 public class TripleAreaDestroyerTool extends DpDiggerItem {
     public TripleAreaDestroyerTool(ToolMaterial tier, TagKey<Block> blockTag, float attackDamage, float attackSpeed, Properties properties) {
         super(tier, blockTag, attackDamage, attackSpeed, properties);
-        //if (tier == ToolMaterial.WOOD || tier == TripleAreaToolMaterial.WOOD) this.burnTime = 200;
     }
 
     @Override
     public boolean canAttackBlock(@Nonnull BlockState state, @Nonnull Level level, @Nonnull BlockPos pos, Player player) {
-        // if is crouching, only breaks one block, else braks 3x3
+        // if is crouching, only breaks one block, else breaks 3x3
         if (!player.isShiftKeyDown() && player.getMainHandItem().isCorrectToolForDrops(level.getBlockState(pos))) {
             breakBlocks(level, player, pos);
         }
@@ -78,7 +76,7 @@ public class TripleAreaDestroyerTool extends DpDiggerItem {
 
     // So, YOU CAN MAKE A CLASS INSIDE A FUNC BUT YOU CAN'T PUT A FUNC INSIDE A FUNCTION ARE YOU SERIOUS?
     // Java noobie understanding this world: *explosions everywhere*
-    public static boolean destroyBlockHelper(BlockState state, Level level, BlockPos pos, Player player) {
+    public static boolean canDestroyBlockAt(BlockState state, Level level, BlockPos pos, Player player) {
         double hardness = state.getDestroySpeed(level, pos);
         boolean correctTool = player.getMainHandItem().isCorrectToolForDrops(state);
         boolean compareHard = (0 < hardness && hardness < (level.getBlockState(pos).getDestroySpeed(level, pos) * 5));
@@ -95,12 +93,14 @@ public class TripleAreaDestroyerTool extends DpDiggerItem {
             if (pos.equals(originPos)) return;
 
             BlockState state = level.getBlockState(pos);
-            if (!destroyBlockHelper(state, level, originPos, player)) return;
+            if (!canDestroyBlockAt(state, level, originPos, player)) return;
 
             ServerPlayer serverPlayer = (ServerPlayer)player;
             if (player.getAbilities().instabuild) {
                 if (state.onDestroyedByPlayer(level, pos, player, true, state.getFluidState())) {
                     state.getBlock().destroy(level, pos, state);
+                    level.removeBlock(pos, false);
+                    level.levelEvent(2001, pos, Block.getId(state)); // Fancy
                 }
             } else {
                 BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(level, pos, state, player);
