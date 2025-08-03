@@ -1,6 +1,7 @@
-package com.dipazio.dpsvarmod.item.parents;
+package com.dipazio.dpsvarmod.item._parents;
 
-import com.dipazio.dpsvarmod.item.parents.grand.DpDiggerItem;
+import com.dipazio.dpsvarmod.item._parents.grand.DpDiggerItem;
+import com.dipazio.dpsvarmod.util.BlocksGetter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientboundBlockUpdatePacket;
@@ -10,19 +11,14 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ToolMaterial;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.HitResult;
-import net.minecraft.core.Direction;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.level.BlockEvent;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
 import java.util.List;
 
 // SoOOoOoO I'm adding hammers and diggers! (Pretty original Ik)
@@ -41,39 +37,6 @@ public class TripleAreaDestroyerTool extends DpDiggerItem {
         return true;
     }
 
-    // I won't make a tool to destroy more than a 3x3 area
-    public static List<BlockPos> blocksToDestroy(BlockPos centerBlock, Player player) {
-        BlockHitResult hitResult = player.level().clip(
-                new ClipContext(player.getEyePosition(1f),
-                player.getEyePosition(1f).add(player.getViewVector(1f).scale(6f)),
-                ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, player)
-        );
-
-        List<BlockPos> positions = new ArrayList<>();
-        if(hitResult.getType() == HitResult.Type.MISS) {
-            return positions;
-        }
-
-        Direction dir = hitResult.getDirection();
-        for (int preX = -1; preX <= 1; preX++) {
-            for (int preY = -1; preY <= 1; preY++) {
-                BlockPos pos;
-
-                if (dir == Direction.UP || dir == Direction.DOWN) {
-                    pos = new BlockPos(centerBlock.getX() + preX, centerBlock.getY(), centerBlock.getZ() + preY);
-                } else if (dir == Direction.NORTH || dir == Direction.SOUTH) {
-                    pos = new BlockPos(centerBlock.getX() + preX, centerBlock.getY() + preY, centerBlock.getZ());
-                } else { // EAST & WEST
-                    pos = new BlockPos(centerBlock.getX(), centerBlock.getY() + preY, centerBlock.getZ() + preX);
-                }
-
-                positions.add(pos);
-            }
-        }
-
-        return positions;
-    }
-
     // So, YOU CAN MAKE A CLASS INSIDE A FUNC BUT YOU CAN'T PUT A FUNC INSIDE A FUNCTION ARE YOU SERIOUS?
     // Java noobie understanding this world: *explosions everywhere*
     public static boolean canDestroyBlockAt(BlockState state, Level level, BlockPos pos, Player player) {
@@ -87,7 +50,7 @@ public class TripleAreaDestroyerTool extends DpDiggerItem {
     public static void breakBlocks(Level level, Player player, BlockPos originPos) {
         if (level.isClientSide) return;
 
-        List<BlockPos> blocks = blocksToDestroy(originPos, player);
+        List<BlockPos> blocks = BlocksGetter.getBlocksInPlayer3x3plane(originPos, player, false);
         ItemStack handItem = player.getMainHandItem();
         blocks.forEach((pos) -> {
             if (pos.equals(originPos)) return;

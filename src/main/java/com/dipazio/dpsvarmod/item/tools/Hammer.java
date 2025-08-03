@@ -1,6 +1,6 @@
 package com.dipazio.dpsvarmod.item.tools;
 
-import com.dipazio.dpsvarmod.item.parents.TripleAreaDestroyerTool;
+import com.dipazio.dpsvarmod.item._parents.TripleAreaDestroyerTool;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.ToolMaterial;
 

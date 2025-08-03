@@ -1,4 +1,4 @@
-package com.dipazio.dpsvarmod.item.parents.grand;
+package com.dipazio.dpsvarmod.item._parents.grand;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

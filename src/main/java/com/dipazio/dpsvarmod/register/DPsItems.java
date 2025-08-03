@@ -1,7 +1,7 @@
 package com.dipazio.dpsvarmod.register;
 
 import com.dipazio.dpsvarmod.DPsVarietyMod;
-import com.dipazio.dpsvarmod.item.material.MegaToolMaterial;
+import com.dipazio.dpsvarmod.item._material.MegaToolMaterial;
 import com.dipazio.dpsvarmod.item.tools.Chopper;
 import com.dipazio.dpsvarmod.item.tools.Digger;
 import com.dipazio.dpsvarmod.item.tools.Hammer;

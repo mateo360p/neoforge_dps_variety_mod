@@ -1,4 +1,4 @@
-package com.dipazio.dpsvarmod.item.parents.grand;
+package com.dipazio.dpsvarmod.item._parents.grand;
 
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;

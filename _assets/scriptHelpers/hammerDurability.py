@@ -20,6 +20,6 @@ for cur in dummyList:
     #print(costAverage)
     #print(maxUses)
 
-    print(cur[0] + ": " + str(int((costAverage - maxUses * 0.05) * 0.875)))
+    print(cur[0] + ": " + str(int((costAverage - maxUses * 0.05) * 0.8)))
 
 #input()
