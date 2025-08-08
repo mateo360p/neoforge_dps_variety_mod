@@ -8,7 +8,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 
-public class DpDiggerItem extends DpItem{
+public class DpDiggerItem extends DpItem {
     public DpDiggerItem(DpToolMaterial material, TagKey<Block> mineableBlocks, float attackDamage, float attackSpeed, Item.Properties properties) {
         super(material.applyToolProperties(properties, mineableBlocks, attackDamage, attackSpeed));
     }

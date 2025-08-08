@@ -3,7 +3,9 @@ package com.dipazio.dpsvarmod.item._parents;
 import com.dipazio.dpsvarmod.item._material.DpToolMaterial;
 import com.dipazio.dpsvarmod.item._parents.grand.DpDiggerItem;
 import com.dipazio.dpsvarmod.util.BlocksUtilFuncs;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientboundBlockUpdatePacket;
 import net.minecraft.server.level.ServerLevel;
@@ -11,6 +13,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -25,6 +28,12 @@ import java.util.List;
 public class TripleAreaDestroyerTool extends DpDiggerItem {
     public TripleAreaDestroyerTool(DpToolMaterial tier, TagKey<Block> blockTag, float attackDamage, float attackSpeed, Properties properties) {
         super(tier, blockTag, attackDamage, attackSpeed, properties);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        Component text = Component.literal("Dig area: 3x3").withStyle(ChatFormatting.GRAY);
+        tooltipComponents.add(text);
     }
 
     @Override

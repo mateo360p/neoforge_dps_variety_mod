@@ -3,8 +3,10 @@ package com.dipazio.dpsvarmod.item.tools;
 import com.dipazio.dpsvarmod.item._material.DpToolMaterial;
 import com.dipazio.dpsvarmod.item._parents.grand.DpDiggerItem;
 import com.dipazio.dpsvarmod.util.BlocksUtilFuncs;
+import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -16,6 +18,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -41,6 +44,12 @@ public class Chopper extends DpDiggerItem {
         }
 
         return true;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        Component text = Component.literal("Break limit: " + RANGE).withStyle(ChatFormatting.GRAY);
+        tooltipComponents.add(text);
     }
 
     // This is kinda messy, isn't it?
