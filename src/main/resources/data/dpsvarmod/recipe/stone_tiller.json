@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:stick",
+    "X": "#minecraft:stone_tool_materials",
+    "H": "minecraft:stone"
+  },
+  "pattern": [
+    "HX",
+    " #",
+    " #"
+  ],
+  "result": {
+    "count": 1,
+    "id": "dpsvarmod:stone_tiller"
+  }
+}

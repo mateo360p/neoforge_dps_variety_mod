@@ -6,9 +6,9 @@
     "H": "minecraft:gold_block"
   },
   "pattern": [
-    " H ",
-    " # ",
-    " # "
+    "H",
+    "#",
+    "#"
   ],
   "result": {
     "count": 1,

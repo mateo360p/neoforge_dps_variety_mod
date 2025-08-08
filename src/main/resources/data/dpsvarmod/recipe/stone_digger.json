@@ -6,9 +6,9 @@
     "H": "minecraft:stone"
   },
   "pattern": [
-    " H ",
-    " # ",
-    " # "
+    "H",
+    "#",
+    "#"
   ],
   "result": {
     "count": 1,

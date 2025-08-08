@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "dpsvarmod:item/tillers/golden_tiller"
+  }
+}

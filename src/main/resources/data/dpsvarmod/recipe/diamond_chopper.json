@@ -7,9 +7,9 @@
     "H": "minecraft:diamond_block"
   },
   "pattern": [
-    "HX ",
-    "H# ",
-    " # "
+    "HX",
+    "H#",
+    " #"
   ],
   "result": {
     "count": 1,

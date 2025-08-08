@@ -17,5 +17,11 @@
   "item.dpsvarmod.golden_chopper": "Golden Chopper",
   "item.dpsvarmod.diamond_chopper": "Diamond Chopper",
 
+  "item.dpsvarmod.wooden_tiller": "Wooden Tiller",
+  "item.dpsvarmod.stone_tiller": "Stone Tiller",
+  "item.dpsvarmod.iron_tiller": "Iron Tiller",
+  "item.dpsvarmod.golden_tiller": "Golden Tiller",
+  "item.dpsvarmod.diamond_tiller": "Diamond Tiller",
+
   "creativetab.dpsvarmod.modtab": "DP's Tab"
 }

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:stick",
+    "X": "#minecraft:iron_tool_materials",
+    "H": "minecraft:iron_block"
+  },
+  "pattern": [
+    "HX",
+    " #",
+    " #"
+  ],
+  "result": {
+    "count": 1,
+    "id": "dpsvarmod:iron_tiller"
+  }
+}

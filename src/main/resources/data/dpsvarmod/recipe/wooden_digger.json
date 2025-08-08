@@ -6,9 +6,9 @@
     "H": "#minecraft:logs"
   },
   "pattern": [
-    " H ",
-    " # ",
-    " # "
+    "H",
+    "#",
+    "#"
   ],
   "result": {
     "count": 1,

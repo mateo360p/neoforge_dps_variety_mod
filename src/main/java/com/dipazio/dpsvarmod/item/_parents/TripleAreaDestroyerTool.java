@@ -1,7 +1,8 @@
 package com.dipazio.dpsvarmod.item._parents;
 
+import com.dipazio.dpsvarmod.item._material.DpToolMaterial;
 import com.dipazio.dpsvarmod.item._parents.grand.DpDiggerItem;
-import com.dipazio.dpsvarmod.util.BlocksGetter;
+import com.dipazio.dpsvarmod.util.BlocksUtilFuncs;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientboundBlockUpdatePacket;
@@ -10,7 +11,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -23,7 +23,7 @@ import java.util.List;
 
 // SoOOoOoO I'm adding hammers and diggers! (Pretty original Ik)
 public class TripleAreaDestroyerTool extends DpDiggerItem {
-    public TripleAreaDestroyerTool(ToolMaterial tier, TagKey<Block> blockTag, float attackDamage, float attackSpeed, Properties properties) {
+    public TripleAreaDestroyerTool(DpToolMaterial tier, TagKey<Block> blockTag, float attackDamage, float attackSpeed, Properties properties) {
         super(tier, blockTag, attackDamage, attackSpeed, properties);
     }
 
@@ -50,7 +50,7 @@ public class TripleAreaDestroyerTool extends DpDiggerItem {
     public static void breakBlocks(Level level, Player player, BlockPos originPos) {
         if (level.isClientSide) return;
 
-        List<BlockPos> blocks = BlocksGetter.getBlocksInPlayer3x3plane(originPos, player, false);
+        List<BlockPos> blocks = BlocksUtilFuncs.getBlocksInPlayer3x3plane(originPos, player, false);
         ItemStack handItem = player.getMainHandItem();
         blocks.forEach((pos) -> {
             if (pos.equals(originPos)) return;

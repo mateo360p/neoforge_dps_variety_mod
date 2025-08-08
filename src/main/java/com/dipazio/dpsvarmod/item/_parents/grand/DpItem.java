@@ -1,15 +1,16 @@
 package com.dipazio.dpsvarmod.item._parents.grand;
 
+import com.dipazio.dpsvarmod.item._material.DpToolMaterial;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ToolMaterial;
+
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.entity.FuelValues;
 import org.jetbrains.annotations.Nullable;
 
 public class DpItem<T extends DpItem<T>> extends Item {
     public int burnTime = -1; // If it's negative then it isn't a fuel
-    public ToolMaterial material;
+    public DpToolMaterial material;
 
     public DpItem(Properties properties) {
         super(properties);

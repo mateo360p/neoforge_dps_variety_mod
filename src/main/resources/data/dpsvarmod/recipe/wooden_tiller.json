@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:stick",
+    "X": "#minecraft:wooden_tool_materials",
+    "H": "#minecraft:logs"
+  },
+  "pattern": [
+    "HX",
+    " #",
+    " #"
+  ],
+  "result": {
+    "count": 1,
+    "id": "dpsvarmod:wooden_tiller"
+  }
+}

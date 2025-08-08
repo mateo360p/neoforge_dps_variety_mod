@@ -1,7 +1,8 @@
 package com.dipazio.dpsvarmod.item.tools;
 
+import com.dipazio.dpsvarmod.item._material.DpToolMaterial;
 import com.dipazio.dpsvarmod.item._parents.TripleAreaDestroyerTool;
-import com.dipazio.dpsvarmod.util.BlocksGetter;
+import com.dipazio.dpsvarmod.util.BlocksUtilFuncs;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -11,7 +12,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ToolMaterial;
+
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,8 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Digger extends TripleAreaDestroyerTool {
-    public Digger(ToolMaterial tier, Properties properties) {
-        super(tier, BlockTags.MINEABLE_WITH_SHOVEL, 6.0F, -3.7F, properties);
+    public Digger(DpToolMaterial material, float attackDamage, float attackSpeed, Properties properties) {
+        super(material, BlockTags.MINEABLE_WITH_SHOVEL, attackDamage, attackSpeed, properties);
     }
 
     @Override
@@ -45,7 +46,7 @@ public class Digger extends TripleAreaDestroyerTool {
                     }
                 }
 
-                List<BlockPos> positions = BlocksGetter.getBlocksIn3x3plane(blockpos, Direction.DOWN, true);
+                List<BlockPos> positions = BlocksUtilFuncs.getBlocksIn3x3plane(blockpos, Direction.DOWN, true);
                 if (player != null) {
                     if(player.isShiftKeyDown()) {
                         positions = new ArrayList<>(); // The block has been already modified!

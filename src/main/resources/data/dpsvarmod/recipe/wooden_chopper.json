@@ -7,9 +7,9 @@
     "H": "#minecraft:logs"
   },
   "pattern": [
-    "HX ",
-    "H# ",
-    " # "
+    "HX",
+    "H#",
+    " #"
   ],
   "result": {
     "count": 1,

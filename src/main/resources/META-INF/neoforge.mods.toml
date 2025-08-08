@@ -11,7 +11,7 @@ license="MIT"
 [[mods]] #mandatory
 
 modId="dpsvarmod" #mandatory
-version="0.0.0.3" #mandatory
+version="0.1.0.0" #mandatory
 displayName="DP's Variety Mod"
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="icon.png" #Well I'm stupid

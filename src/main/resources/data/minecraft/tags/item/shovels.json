@@ -1,0 +1,9 @@
+{
+  "values": [
+    "dpsvarmod:wooden_digger",
+    "dpsvarmod:stone_digger",
+    "dpsvarmod:iron_digger",
+    "dpsvarmod:golden_digger",
+    "dpsvarmod:diamond_digger"
+  ]
+}

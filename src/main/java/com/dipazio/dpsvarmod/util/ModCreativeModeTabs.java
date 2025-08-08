@@ -36,6 +36,13 @@ public class ModCreativeModeTabs {
                     output.accept(DPsItems.IRON_CHOPPER);
                     output.accept(DPsItems.GOLDEN_CHOPPER);
                     output.accept(DPsItems.DIAMOND_CHOPPER);
+
+                    output.accept(DPsItems.WOODEN_TILLER);
+                    output.accept(DPsItems.STONE_TILLER);
+                    output.accept(DPsItems.IRON_TILLER);
+                    output.accept(DPsItems.GOLDEN_TILLER);
+                    output.accept(DPsItems.DIAMOND_TILLER);
+
                 }).build()
     );
 
