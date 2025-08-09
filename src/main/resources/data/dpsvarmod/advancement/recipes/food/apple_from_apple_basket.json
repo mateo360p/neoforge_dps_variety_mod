@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_apple_basket": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dpsvarmod:apple_basket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dpsvarmod:apple_from_apple_basket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_apple_basket"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dpsvarmod:apple_from_apple_basket"
+    ]
+  }
+}

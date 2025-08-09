@@ -23,5 +23,14 @@
   "item.dpsvarmod.golden_tiller": "Golden Tiller",
   "item.dpsvarmod.diamond_tiller": "Diamond Tiller",
 
-  "creativetab.dpsvarmod.modtab_megatools": "DP's Mega-tools"
+
+  "item.dpsvarmod.combined_rotten_flesh": "Combined Rotten Flesh",
+  "block.dpsvarmod.carrot_basket": "Carrot Basket",
+  "block.dpsvarmod.potato_basket": "Potato Basket",
+  "block.dpsvarmod.apple_basket": "Apple Basket",
+  "block.dpsvarmod.beetroot_basket": "Beetroot Basket",
+
+
+  "creativetab.dpsvarmod.modtab_megatools": "DP's Mega-Tools",
+  "creativetab.dpsvarmod.modtab_vanilla_extras": "DP's Vanilla Extras"
 }

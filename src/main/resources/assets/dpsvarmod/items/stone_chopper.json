@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "dpsvarmod:item/chopper/stone_chopper"
+    "model": "dpsvarmod:item/mega_tools/chopper/stone_chopper"
   }
 }

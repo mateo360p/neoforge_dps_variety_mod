@@ -1,6 +1,7 @@
 package com.dipazio.dpsvarmod.util;
 
 import com.dipazio.dpsvarmod.DPsVarietyMod;
+import com.dipazio.dpsvarmod.register.DPsBlocks;
 import com.dipazio.dpsvarmod.register.DPsItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -15,7 +16,7 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, DPsVarietyMod.MODID);
 
-    public static final Supplier<CreativeModeTab> DPS_TAB = CREATIVE_MODE_TABS.register("dps_tab",
+    public static final Supplier<CreativeModeTab> DPS_TAB_MEGA_TOOLS = CREATIVE_MODE_TABS.register("dps_tab_mega_tools",
         () -> CreativeModeTab.builder().icon(() -> new ItemStack(DPsItems.GOLDEN_HAMMER.get()))
                 .title(Component.translatable("creativetab.dpsvarmod.modtab_megatools"))
                 .displayItems((itemDisplayParameters, output) -> {
@@ -46,6 +47,20 @@ public class ModCreativeModeTabs {
 
                 }).build()
     );
+
+    public static final Supplier<CreativeModeTab> DPS_TAB_VANILLA_EXTRAS = CREATIVE_MODE_TABS.register("dps_tab_vanilla_extras",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(DPsBlocks.APPLE_BASKET.get()))
+                    .title(Component.translatable("creativetab.dpsvarmod.modtab_vanilla_extras"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(DPsBlocks.APPLE_BASKET);
+                        output.accept(DPsBlocks.CARROT_BASKET);
+                        output.accept(DPsBlocks.POTATO_BASKET);
+                        output.accept(DPsBlocks.BEETROOT_BASKET);
+                        output.accept(DPsItems.COMBINED_ROTTEN_FLESH);
+
+                    }).build()
+    );
+
 
     public static void register(IEventBus eventBus){
         CREATIVE_MODE_TABS.register(eventBus);

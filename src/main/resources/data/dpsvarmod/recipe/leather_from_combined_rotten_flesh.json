@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:smelting",
+    "category": "misc",
+    "experience": 0.35,
+    "cookingtime": 200,
+    "ingredient": "dpsvarmod:combined_rotten_flesh",
+    "result": {
+        "count": 1,
+        "id": "minecraft:leather"
+    }
+}

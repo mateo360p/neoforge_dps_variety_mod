@@ -3,6 +3,7 @@ package com.dipazio.dpsvarmod.register;
 import com.dipazio.dpsvarmod.DPsVarietyMod;
 import com.dipazio.dpsvarmod.item._material.MegaToolMaterial;
 import com.dipazio.dpsvarmod.item._material.VanillaToolMaterial;
+import com.dipazio.dpsvarmod.item._parents.grand.DpFoodItem;
 import com.dipazio.dpsvarmod.item.tools.Chopper;
 import com.dipazio.dpsvarmod.item.tools.Digger;
 import com.dipazio.dpsvarmod.item.tools.Hammer;
@@ -58,6 +59,9 @@ public class DPsItems {
             (properties) -> new Tiller(MegaToolMaterial.GOLD, 4, 1.0F, 1.0F, properties));
     public static final DeferredItem<Item> DIAMOND_TILLER = ITEMS.registerItem("diamond_tiller",
             (properties) -> new Tiller(MegaToolMaterial.DIAMOND, 32, 1.5F, 1.2F, properties));
+
+    public static final DeferredItem<Item> COMBINED_ROTTEN_FLESH = ITEMS.registerItem("combined_rotten_flesh",
+            (properties) -> new DpFoodItem(7, 0.28F, properties, DPsFoodsEffects.COMBINED_ROTTEN_FLESH));
 
     public static void registerItems(IEventBus eBus) {
         ITEMS.register(eBus);

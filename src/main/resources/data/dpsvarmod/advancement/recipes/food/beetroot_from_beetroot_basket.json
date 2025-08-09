@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_beetroot_basket": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dpsvarmod:beetroot_basket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dpsvarmod:beetroot_from_beetroot_basket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_beetroot_basket"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dpsvarmod:beetroot_from_beetroot_basket"
+    ]
+  }
+}

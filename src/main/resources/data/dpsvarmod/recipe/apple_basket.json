@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "food_baskets",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": "minecraft:apple"
+  },
+  "result": {
+    "count": 1,
+    "id": "dpsvarmod:apple_basket"
+  }
+}

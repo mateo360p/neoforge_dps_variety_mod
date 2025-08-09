@@ -1,6 +1,0 @@
-{
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "dpsvarmod:item/diggers/iron_digger"
-  }
-}

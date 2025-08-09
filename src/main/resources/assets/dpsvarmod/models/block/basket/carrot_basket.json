@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "dpsvarmod:block/basket/food_basket_bottom",
+    "side": "dpsvarmod:block/basket/carrot_basket_side",
+    "top": "dpsvarmod:block/basket/carrot_basket_top"
+  }
+}

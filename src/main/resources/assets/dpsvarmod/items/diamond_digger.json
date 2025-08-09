@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "dpsvarmod:item/digger/diamond_digger"
+    "model": "dpsvarmod:item/mega_tools/digger/diamond_digger"
   }
 }

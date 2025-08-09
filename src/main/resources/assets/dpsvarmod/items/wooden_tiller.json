@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "dpsvarmod:item/tiller/wooden_tiller"
+    "model": "dpsvarmod:item/mega_tools/tiller/wooden_tiller"
   }
 }

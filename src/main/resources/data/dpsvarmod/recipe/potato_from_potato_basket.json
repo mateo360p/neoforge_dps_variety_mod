@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "dpsvarmod:potato_basket"
+  ],
+  "result": {
+    "count": 9,
+    "id": "minecraft:potato"
+  }
+}

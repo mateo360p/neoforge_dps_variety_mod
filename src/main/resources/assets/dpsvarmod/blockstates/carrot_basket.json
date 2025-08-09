@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "dpsvarmod:block/basket/carrot_basket"
+    }
+  }
+}
