@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "dpsvarmod:item/warp_book/bound_warp_page"
+  }
+}

@@ -58,6 +58,9 @@ public class ModCreativeModeTabs {
                         output.accept(DPsBlocks.BEETROOT_BASKET);
                         output.accept(DPsItems.COMBINED_ROTTEN_FLESH);
 
+                        output.accept(DPsItems.WARP_BOOK);
+                        output.accept(DPsItems.UNBOUND_WARP_PAGE);
+
                     }).build()
     );
 

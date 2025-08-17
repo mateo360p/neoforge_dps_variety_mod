@@ -31,6 +31,11 @@
   "block.dpsvarmod.beetroot_basket": "Beetroot Basket",
 
 
+  "item.dpsvarmod.warp_book": "Warp Book",
+  "item.dpsvarmod.unbound_warp_page": "Unbound Warp Page",
+  "item.dpsvarmod.bound_warp_page": "Bound Warp Page",
+  "gui.warp_book": "Warp Book",
+
   "creativetab.dpsvarmod.modtab_megatools": "DP's Mega-Tools",
   "creativetab.dpsvarmod.modtab_vanilla_extras": "DP's Vanilla Extras"
 }

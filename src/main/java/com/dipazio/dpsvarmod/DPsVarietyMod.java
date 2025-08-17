@@ -1,13 +1,17 @@
 package com.dipazio.dpsvarmod;
 
+import com.dipazio.dpsvarmod.gui.screen.WarpBookScreen;
+import com.dipazio.dpsvarmod.packetShits.PacketHandler;
 import com.dipazio.dpsvarmod.register.DPsBlocks;
 import com.dipazio.dpsvarmod.register.DPsItems;
+import com.dipazio.dpsvarmod.register.DPsMenus;
 import com.dipazio.dpsvarmod.util.ModCreativeModeTabs;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
-import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -15,7 +19,6 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
@@ -46,6 +49,7 @@ public class DPsVarietyMod
 
         DPsItems.registerItems(modEventBus);
         DPsBlocks.registerBlocks(modEventBus);
+        DPsMenus.register(modEventBus);
 
         modEventBus.addListener(this::addCreative); // Register the item to a creative tab
 
@@ -72,9 +76,8 @@ public class DPsVarietyMod
     public static class ClientModEvents
     {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-
+        public static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(DPsMenus.WARP_BOOK_MENU.get(), WarpBookScreen::new);
         }
     }
 }

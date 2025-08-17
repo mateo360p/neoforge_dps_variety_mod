@@ -8,6 +8,9 @@ import com.dipazio.dpsvarmod.item.tools.Chopper;
 import com.dipazio.dpsvarmod.item.tools.Digger;
 import com.dipazio.dpsvarmod.item.tools.Hammer;
 import com.dipazio.dpsvarmod.item.tools.Tiller;
+import com.dipazio.dpsvarmod.item.warp.BoundWarpPage;
+import com.dipazio.dpsvarmod.item.warp.WarpBook;
+import com.dipazio.dpsvarmod.item.warp.UnboundWarpPage;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -60,8 +63,17 @@ public class DPsItems {
     public static final DeferredItem<Item> DIAMOND_TILLER = ITEMS.registerItem("diamond_tiller",
             (properties) -> new Tiller(MegaToolMaterial.DIAMOND, 32, 1.5F, 1.2F, properties));
 
+
     public static final DeferredItem<Item> COMBINED_ROTTEN_FLESH = ITEMS.registerItem("combined_rotten_flesh",
             (properties) -> new DpFoodItem(7, 0.28F, properties, DPsFoodsEffects.COMBINED_ROTTEN_FLESH));
+
+
+    public static final DeferredItem<Item> WARP_BOOK = ITEMS.registerItem("warp_book",
+            WarpBook::new);
+    public static final DeferredItem<Item> UNBOUND_WARP_PAGE = ITEMS.registerItem("unbound_warp_page",
+            UnboundWarpPage::new);
+    public static final DeferredItem<Item> BOUND_WARP_PAGE = ITEMS.registerItem("bound_warp_page",
+            BoundWarpPage::new);
 
     public static void registerItems(IEventBus eBus) {
         ITEMS.register(eBus);
