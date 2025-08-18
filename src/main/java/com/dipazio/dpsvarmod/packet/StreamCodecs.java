@@ -11,6 +11,7 @@ public class StreamCodecs {
     public static final net.minecraft.network.codec.StreamCodec<RegistryFriendlyByteBuf, String> STRING_CODEC;
     public static final StreamCodec<RegistryFriendlyByteBuf, InteractionHand> HAND_CODEC;
     public static final StreamCodec<RegistryFriendlyByteBuf, Double> DOUBLE_CODEC;
+    public static final StreamCodec<RegistryFriendlyByteBuf, Boolean> BOOLEAN_CODEC;
 
     static {
         ITEM_STACK_CODEC = ItemStack.OPTIONAL_STREAM_CODEC;
@@ -35,6 +36,17 @@ public class StreamCodecs {
             @Override
             public Double decode(RegistryFriendlyByteBuf buf) {
                 return buf.readDouble();
+            }
+        };
+        BOOLEAN_CODEC = new StreamCodec<>() {
+            @Override
+            public void encode(RegistryFriendlyByteBuf buf, Boolean value) {
+                buf.writeBoolean(value);
+            }
+
+            @Override
+            public Boolean decode(RegistryFriendlyByteBuf buf) {
+                return buf.readBoolean();
             }
         };
     }

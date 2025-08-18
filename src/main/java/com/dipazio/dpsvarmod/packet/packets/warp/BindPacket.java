@@ -1,17 +1,16 @@
 package com.dipazio.dpsvarmod.packet.packets.warp;
 
 import com.dipazio.dpsvarmod.item.warp.UnboundWarpPage;
-import com.dipazio.dpsvarmod.packet.IPacketExtension;
-import com.dipazio.dpsvarmod.packet.PacketHandler;
-import com.dipazio.dpsvarmod.packet.StreamCodecs;
+import com.dipazio.dpsvarmod.packet.*;
 import com.dipazio.dpsvarmod.register.DPsItems;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
-public record BindPacket(InteractionHand hand, String name) implements IPacketExtension {
+public record BindPacket(InteractionHand hand, String name) implements IPacketToServer {
     public static final StreamCodec<RegistryFriendlyByteBuf, BindPacket> STREAM_CODEC;
 
     static {
