@@ -2,7 +2,7 @@ package com.dipazio.dpsvarmod.item._parents;
 
 import com.dipazio.dpsvarmod.item._material.DpToolMaterial;
 import com.dipazio.dpsvarmod.item._parents.grand.DpDiggerItem;
-import com.dipazio.dpsvarmod.util.BlocksUtilFuncs;
+import com.dipazio.dpsvarmod.util.BlocksFuncs;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -59,7 +59,7 @@ public class TripleAreaDestroyerTool extends DpDiggerItem {
     public static void breakBlocks(Level level, Player player, BlockPos originPos) {
         if (level.isClientSide) return;
 
-        List<BlockPos> blocks = BlocksUtilFuncs.getBlocksInPlayer3x3plane(originPos, player, false);
+        List<BlockPos> blocks = BlocksFuncs.getBlocksInPlayer3x3plane(originPos, player, false);
         ItemStack handItem = player.getMainHandItem();
         blocks.forEach((pos) -> {
             if (pos.equals(originPos)) return;

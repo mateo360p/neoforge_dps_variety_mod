@@ -2,7 +2,7 @@ package com.dipazio.dpsvarmod.item.tools;
 
 import com.dipazio.dpsvarmod.item._material.DpToolMaterial;
 import com.dipazio.dpsvarmod.item._parents.TripleAreaDestroyerTool;
-import com.dipazio.dpsvarmod.util.BlocksUtilFuncs;
+import com.dipazio.dpsvarmod.util.BlocksFuncs;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -46,7 +46,7 @@ public class Digger extends TripleAreaDestroyerTool {
                     }
                 }
 
-                List<BlockPos> positions = BlocksUtilFuncs.getBlocksIn3x3plane(blockpos, Direction.DOWN, true);
+                List<BlockPos> positions = BlocksFuncs.getBlocksIn3x3plane(blockpos, Direction.DOWN, true);
                 if (player != null) {
                     if(player.isShiftKeyDown()) {
                         positions = new ArrayList<>(); // The block has been already modified!

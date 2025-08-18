@@ -23,7 +23,7 @@ import net.neoforged.neoforge.event.level.BlockEvent;
 
 import java.util.*;
 
-public class BlocksUtilFuncs {
+public class BlocksFuncs {
     // I won't make a tool to destroy more than a 3x3 area
     public static List<BlockPos> getBlocksIn3x3plane(BlockPos centerBlock, Direction dir, boolean ignoreCorners) {
         List<BlockPos> positions = new ArrayList<>();

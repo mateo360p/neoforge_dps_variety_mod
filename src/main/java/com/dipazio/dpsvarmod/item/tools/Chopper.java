@@ -2,7 +2,7 @@ package com.dipazio.dpsvarmod.item.tools;
 
 import com.dipazio.dpsvarmod.item._material.DpToolMaterial;
 import com.dipazio.dpsvarmod.item._parents.grand.DpDiggerItem;
-import com.dipazio.dpsvarmod.util.BlocksUtilFuncs;
+import com.dipazio.dpsvarmod.util.BlocksFuncs;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
@@ -39,7 +39,7 @@ public class Chopper extends DpDiggerItem {
     @Override
     public boolean canAttackBlock(@Nonnull BlockState state, @Nonnull Level level, @Nonnull BlockPos pos, Player player) {
         if (!player.isShiftKeyDown() && player.getMainHandItem().isCorrectToolForDrops(state)) {
-            BlocksUtilFuncs.breakBlocksWithinLimit(level, player, pos, RANGE);
+            BlocksFuncs.breakBlocksWithinLimit(level, player, pos, RANGE);
             return false; // fkin' shitty bug, I'm to lazy to search how to fix it-
         }
 
@@ -72,9 +72,9 @@ public class Chopper extends DpDiggerItem {
                         positions = new ArrayList<>();
                         positions.add(blockpos); // Only one block!
                     }
-                    else positions = BlocksUtilFuncs.getBlocksInPlayer3x3plane(blockpos, player, true);
+                    else positions = BlocksFuncs.getBlocksInPlayer3x3plane(blockpos, player, true);
                 }
-                else positions = BlocksUtilFuncs.getBlocksIn3x3plane(blockpos, context.getHorizontalDirection(), true);
+                else positions = BlocksFuncs.getBlocksIn3x3plane(blockpos, context.getHorizontalDirection(), true);
 
                 int actionType = evaluateModifyType(level.getBlockState(blockpos), context);;
                 for (BlockPos block : positions) {

@@ -1,5 +1,6 @@
 package com.dipazio.dpsvarmod.item.warp;
 
+import com.dipazio.dpsvarmod.util.ItemsFuncs;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -14,9 +15,6 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-// I was changing the models of the Unbound page
-// Man that shit is stressing, let's do 2 pages
-// Unbound and Bound are separated
 public class BoundWarpPage extends Item {
 
     public BoundWarpPage(Properties properties) {
@@ -25,10 +23,11 @@ public class BoundWarpPage extends Item {
 
     @Override
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
-        if (!level.isClientSide && !player.isShiftKeyDown()) {
+        if (!level.isClientSide && player.isShiftKeyDown()) {
             ItemStack stack = player.getItemInHand(hand);
-            CompoundTag data = UnboundWarpPage.getData(stack);
+            CompoundTag data = ItemsFuncs.getData(stack);
             doTeleportAction(data, (ServerPlayer) player);
+            stack.shrink(1);
         }
 
         return InteractionResult.SUCCESS;
@@ -36,8 +35,8 @@ public class BoundWarpPage extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        CompoundTag data = UnboundWarpPage.getData(stack);
-        if (!UnboundWarpPage.hasTpData(UnboundWarpPage.getData(stack))) {
+        CompoundTag data = ItemsFuncs.getData(stack);
+        if (!hasTpData(ItemsFuncs.getData(stack))) {
             Component text = Component.literal("No teleport data").withStyle(ChatFormatting.GRAY);
             tooltipComponents.add(text);
         } else {
@@ -52,12 +51,16 @@ public class BoundWarpPage extends Item {
     }
 
     public void doTeleportAction(CompoundTag data, ServerPlayer serverPlayer) {
-        if (!UnboundWarpPage.hasTpData(data)) return;
+        if (!hasTpData(data)) return;
 
         double x = data.getDouble("tp_X");
         double y = data.getDouble("tp_Y");
         double z = data.getDouble("tp_Z");
 
         serverPlayer.teleportTo(x, y, z);
+    }
+
+    boolean hasTpData(CompoundTag data) {
+        return data.contains("tp_X") && data.contains("tp_Y") && data.contains("tp_Z") && data.contains("waypoint_name");
     }
 }

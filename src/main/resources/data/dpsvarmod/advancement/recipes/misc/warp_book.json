@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_unbound_warp_page": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dpsvarmod:unbound_warp_page"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bound_warp_page": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dpsvarmod:bound_warp_page"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dpsvarmod:warp_book"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_unbound_warp_page",
+      "has_bound_warp_page"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dpsvarmod:warp_book"
+    ]
+  }
+}

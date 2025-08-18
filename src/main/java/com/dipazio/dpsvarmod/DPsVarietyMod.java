@@ -1,13 +1,11 @@
 package com.dipazio.dpsvarmod;
 
 import com.dipazio.dpsvarmod.gui.screen.WarpBookScreen;
-import com.dipazio.dpsvarmod.packetShits.PacketHandler;
 import com.dipazio.dpsvarmod.register.DPsBlocks;
 import com.dipazio.dpsvarmod.register.DPsItems;
 import com.dipazio.dpsvarmod.register.DPsMenus;
-import com.dipazio.dpsvarmod.util.ModCreativeModeTabs;
+import com.dipazio.dpsvarmod.util.CreativeModeTabs;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
-import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -29,7 +27,7 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 @Mod(DPsVarietyMod.MODID)
 public class DPsVarietyMod
 {
-    final String CODE_VERSION = "0.1.1.0"; // Just to verify the code version, this doesn't do anything!
+    final String CODE_VERSION = "0.2.1.0"; // Just to verify the code version, this doesn't do anything!
     // Yes, i'm following a tutorial ok?
     public static final String MODID = "dpsvarmod";
     private static final Logger LOGGER = LogUtils.getLogger();
@@ -45,11 +43,11 @@ public class DPsVarietyMod
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        ModCreativeModeTabs.register(modEventBus);
+        CreativeModeTabs.register(modEventBus);
 
         DPsItems.registerItems(modEventBus);
         DPsBlocks.registerBlocks(modEventBus);
-        DPsMenus.register(modEventBus);
+        DPsMenus.registerMenu(modEventBus);
 
         modEventBus.addListener(this::addCreative); // Register the item to a creative tab
 

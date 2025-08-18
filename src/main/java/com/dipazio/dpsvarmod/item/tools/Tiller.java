@@ -2,7 +2,7 @@ package com.dipazio.dpsvarmod.item.tools;
 
 import com.dipazio.dpsvarmod.item._material.DpToolMaterial;
 import com.dipazio.dpsvarmod.item._parents.grand.DpDiggerItem;
-import com.dipazio.dpsvarmod.util.BlocksUtilFuncs;
+import com.dipazio.dpsvarmod.util.BlocksFuncs;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -41,7 +41,7 @@ public class Tiller extends DpDiggerItem {
     @Override
     public boolean canAttackBlock(@Nonnull BlockState state, @Nonnull Level level, @Nonnull BlockPos pos, Player player) {
         if (!player.isShiftKeyDown() && player.getMainHandItem().isCorrectToolForDrops(state)) {
-            BlocksUtilFuncs.breakBlocksWithinLimit(level, player, pos, RANGE);
+            BlocksFuncs.breakBlocksWithinLimit(level, player, pos, RANGE);
             return false;
         }
 
@@ -79,9 +79,9 @@ public class Tiller extends DpDiggerItem {
                     if(player.isShiftKeyDown()) {
                         positions = new ArrayList<>();
                     }
-                    else positions = BlocksUtilFuncs.getBlocksInPlayer3x3plane(blockpos, player, false);
+                    else positions = BlocksFuncs.getBlocksInPlayer3x3plane(blockpos, player, false);
                 }
-                else positions = BlocksUtilFuncs.getBlocksIn3x3plane(blockpos, context.getHorizontalDirection(), false);
+                else positions = BlocksFuncs.getBlocksIn3x3plane(blockpos, context.getHorizontalDirection(), false);
 
                 positions.remove(blockpos); // oOoOoOooOo
 

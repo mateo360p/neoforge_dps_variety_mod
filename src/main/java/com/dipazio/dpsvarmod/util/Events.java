@@ -1,6 +1,7 @@
-package com.dipazio.dpsvarmod;
+package com.dipazio.dpsvarmod.util;
 
-import com.dipazio.dpsvarmod.packetShits.PacketHandler;
+import com.dipazio.dpsvarmod.DPsVarietyMod;
+import com.dipazio.dpsvarmod.packet.PacketHandler;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;

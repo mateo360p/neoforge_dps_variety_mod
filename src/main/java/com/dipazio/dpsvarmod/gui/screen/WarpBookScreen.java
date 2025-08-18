@@ -8,7 +8,6 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.item.ItemStack;
 
 public class WarpBookScreen extends AbstractContainerScreen<WarpBookMenu> {
     private static final ResourceLocation GUI_TEXTURE =

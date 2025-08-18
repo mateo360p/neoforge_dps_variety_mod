@@ -1,12 +1,12 @@
 package com.dipazio.dpsvarmod.item.warp;
 
 import com.dipazio.dpsvarmod.gui.screen.WarpPageNameScreen;
-import com.dipazio.dpsvarmod.packetShits.BindPacket;
-import com.dipazio.dpsvarmod.packetShits.PacketHandler;
+import com.dipazio.dpsvarmod.packet.packets.warp.BindPacket;
+import com.dipazio.dpsvarmod.packet.PacketHandler;
 import com.dipazio.dpsvarmod.register.DPsItems;
+import com.dipazio.dpsvarmod.util.ItemsFuncs;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -15,7 +15,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.level.Level;
 
 import java.util.List;
@@ -47,22 +46,14 @@ public class UnboundWarpPage extends Item {
         tooltipComponents.add(text);
     }
 
-    public static CompoundTag getData(ItemStack stack) {
-        return stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
-    }
-
-    public static boolean hasTpData(CompoundTag data) {
-        return data.contains("tp_X") && data.contains("tp_Y") && data.contains("tp_Z") && data.contains("waypoint_name");
-    }
-
     public static void saveTeleport(ItemStack stack, Player player, String waypointName) {
-        CompoundTag data = getData(stack);
+        CompoundTag data = ItemsFuncs.getData(stack);
 
         data.putDouble("tp_X", player.getX());
         data.putDouble("tp_Y", player.getY());
         data.putDouble("tp_Z", player.getZ());
         data.putString("waypoint_name", waypointName);
 
-        stack.set(DataComponents.CUSTOM_DATA, CustomData.of(data));
+        ItemsFuncs.saveData(stack, data);
     }
 }
