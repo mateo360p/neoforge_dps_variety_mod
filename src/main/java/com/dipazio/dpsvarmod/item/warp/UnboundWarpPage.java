@@ -67,6 +67,20 @@ public class UnboundWarpPage extends Item {
         ItemsFuncs.saveData(stack, data);
     }
 
+    public static void saveTeleport(ItemStack stack, double x, double y, double z, Player player, String waypointName, String dimension) {
+        CompoundTag data = ItemsFuncs.getData(stack);
+
+        data.putDouble("tp_X", x);
+        data.putDouble("tp_Y", y);
+        data.putDouble("tp_Z", z);
+        data.putDouble("rot_X", player.getXRot());
+        data.putDouble("rot_Y", player.getYRot());
+        data.putString("dimension", dimension);
+        data.putString("waypoint_name", waypointName);
+
+        ItemsFuncs.saveData(stack, data);
+    }
+
     public static void savePlayerTeleport(ItemStack stack, Player player) {
         CompoundTag data = ItemsFuncs.getData(stack);
 

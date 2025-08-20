@@ -38,6 +38,7 @@
   "item.dpsvarmod.unbound_warp_page": "Unbound Warp Page",
   "item.dpsvarmod.bound_warp_page": "Bound Warp Page",
   "item.dpsvarmod.player_warp_page": "Player Warp Page",
+  "item.dpsvarmod.death_warp_page": "Death Warp Page",
   
   "gui.warp.book_inventory": "Warp Book",
   "gui.warp.book_teleport": "Warp to waypoint",
@@ -50,6 +51,7 @@
   "info.warp.binds_none": "No teleport data",
   "info.warp.binds_use": "No teleport data, use to save a position",
   "info.warp.binds_yourself": "(That's you!, you cannot teleport to yourself)",
+  "info.warp.binds_death": "Only works inside a %s",
 
 
   "creativetab.dpsvarmod.modtab_megatools": "DP's Mega-Tools",

@@ -6,8 +6,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.util.Mth;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -84,18 +82,5 @@ public class BoundWarpPage extends Item {
 
     boolean hasTpData(CompoundTag data) {
         return data.contains("tp_X") && data.contains("tp_Y") && data.contains("tp_Z") && data.contains("waypoint_name");
-    }
-
-    public static double calcWarpHungerExhaustion(double distance, Difficulty difficulty) {
-        distance = Mth.clamp(distance, 250.0, 20000.0);
-        double distTax = distance * 0.005;
-        double diffTax = switch (difficulty) {
-            case EASY -> 1.0;
-            case HARD -> 2.25;
-            case PEACEFUL -> 0.0;
-            default -> 1.75; // NORMAL and others idk
-        };
-
-        return distTax * diffTax;
     }
 }

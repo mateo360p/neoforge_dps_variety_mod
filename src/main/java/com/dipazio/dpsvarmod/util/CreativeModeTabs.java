@@ -60,6 +60,7 @@ public class CreativeModeTabs {
 
                         output.accept(DPsItems.WARP_BOOK);
                         output.accept(DPsItems.UNBOUND_WARP_PAGE);
+                        output.accept(DPsItems.DEATH_WARP_PAGE);
 
                     }).build()
     );

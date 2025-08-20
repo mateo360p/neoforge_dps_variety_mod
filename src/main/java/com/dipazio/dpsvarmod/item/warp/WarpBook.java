@@ -13,6 +13,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.Mth;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleMenuProvider;
@@ -96,12 +98,14 @@ public class WarpBook extends Item {
 
             @Override
             protected int getStackLimit(int slot, ItemStack stack) {
+                if (slot == 0) return 16; // Death page
                 return 1;
             }
 
             @Override
             public boolean isItemValid(int slot, ItemStack stack) {
-                if (slot == 0) return false; // Future Death Paper
+                if (slot == 0) return (stack.getItem() == DPsItems.DEATH_WARP_PAGE.get());
+
                 return (stack.getItem() == DPsItems.BOUND_WARP_PAGE.get() ||
                         stack.getItem() == DPsItems.PLAYER_WARP_PAGE.get());
             }
@@ -170,7 +174,7 @@ public class WarpBook extends Item {
 
         try {
             player.teleport(new TeleportTransition(newLevel, new Vec3(toX, toY, toZ), Vec3.ZERO, (float) rotY, (float) rotX, TeleportTransition.DO_NOTHING));
-            player.causeFoodExhaustion((float) BoundWarpPage.calcWarpHungerExhaustion(traveledDistance, player.level().getDifficulty()));
+            player.causeFoodExhaustion((float) calcWarpHungerExhaustion(traveledDistance, player.level().getDifficulty()));
         } catch(Exception dummy) {
             System.out.println("Error on teleport: " + dummy); // idk
             return false;
@@ -225,6 +229,20 @@ public class WarpBook extends Item {
                 0.25
         );
     }
+
+    public static double calcWarpHungerExhaustion(double distance, Difficulty difficulty) {
+        distance = Mth.clamp(distance, 250.0, 20000.0);
+        double distTax = distance * 0.005;
+        double diffTax = switch (difficulty) {
+            case EASY -> 1.0;
+            case HARD -> 2.25;
+            case PEACEFUL -> 0.0;
+            default -> 1.75; // NORMAL and others idk
+        };
+
+        return distTax * diffTax;
+    }
+
 
     // XD
     public static double sqr(double x) {

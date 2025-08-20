@@ -8,10 +8,7 @@ import com.dipazio.dpsvarmod.item.tools.Chopper;
 import com.dipazio.dpsvarmod.item.tools.Digger;
 import com.dipazio.dpsvarmod.item.tools.Hammer;
 import com.dipazio.dpsvarmod.item.tools.Tiller;
-import com.dipazio.dpsvarmod.item.warp.BoundWarpPage;
-import com.dipazio.dpsvarmod.item.warp.PlayerWarpPage;
-import com.dipazio.dpsvarmod.item.warp.WarpBook;
-import com.dipazio.dpsvarmod.item.warp.UnboundWarpPage;
+import com.dipazio.dpsvarmod.item.warp.*;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -77,6 +74,8 @@ public class DPsItems {
             BoundWarpPage::new);
     public static final DeferredItem<Item> PLAYER_WARP_PAGE = ITEMS.registerItem("player_warp_page",
             PlayerWarpPage::new);
+    public static final DeferredItem<Item> DEATH_WARP_PAGE = ITEMS.registerItem("death_warp_page",
+            DeathWarpPage::new);
 
     public static void registerItems(IEventBus eBus) {
         ITEMS.register(eBus);
