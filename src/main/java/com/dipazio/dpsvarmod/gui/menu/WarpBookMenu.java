@@ -6,7 +6,6 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.items.ItemStackHandler;
@@ -31,7 +30,6 @@ public class WarpBookMenu extends AbstractContainerMenu {
 
         this.addSlot(new SlotItemHandler(handler, 0, 184, 36));
         addBookGrid(handler, 8, 18);
-
 
         addPlayerInventory(inventory);
         addPlayerHotbar(inventory);

@@ -20,13 +20,13 @@ public class WarpBookTeleportScreen extends Screen {
     private final ItemStackHandler items;
 
     public WarpBookTeleportScreen(ItemStackHandler bookItems) {
-        super(Component.literal("Warp to waypoint"));
+        super(Component.translatable( "gui.warp.book_teleport"));
         this.items = bookItems;
     }
 
     @Override
     protected void init() {
-        Button closeButton = this.addRenderableWidget(Button.builder(Component.literal("Close"), button -> {
+        Button closeButton = this.addRenderableWidget(Button.builder(Component.translatable("gui.generic.close"), button -> {
             this.onClose();
         }).bounds(this.width / 2 - 100, this.height - 40, 200, 20).build());
         closeButton.active = true;

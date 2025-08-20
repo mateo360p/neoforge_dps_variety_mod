@@ -42,7 +42,7 @@ public class WarpBook extends Item {
             if (player.isShiftKeyDown()) {
                 player.openMenu(new SimpleMenuProvider(
                         (id, inv, p) -> new WarpBookMenu(id, inv, slot),
-                        Component.translatable("gui.warp_book")),
+                        Component.translatable("gui.warp.book_inventory")),
                         buf -> buf.writeVarInt(slot));
             }
         } else {
@@ -66,8 +66,8 @@ public class WarpBook extends Item {
         } catch (Exception var) { slots = 0;}
 
         if (slots > 0) {
-            text = Component.literal("#Binds: " + slots).withStyle(ChatFormatting.GRAY);
-        } else text = Component.literal("No Binds, use while shifting to save bound pages").withStyle(ChatFormatting.GRAY);
+            text = Component.translatable("info.warp.binds_num").append("" + slots).withStyle(ChatFormatting.GRAY);
+        } else text = Component.translatable("info.warp.binds_zero").withStyle(ChatFormatting.GRAY);
         tooltipComponents.add(text);
     }
     //--------------------------------Inventory-----------------------------------
@@ -218,11 +218,11 @@ public class WarpBook extends Item {
                 player.getX(),
                 player.getY() + 0.5,
                 player.getZ(),
-                65,
+                15,
                 0.0,
                 0.0,
                 0.0,
-                1.0
+                0.25
         );
     }
 

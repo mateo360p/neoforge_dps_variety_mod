@@ -32,7 +32,7 @@ public class TripleAreaDestroyerTool extends DpDiggerItem {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        Component text = Component.literal("Dig area: 3x3").withStyle(ChatFormatting.GRAY);
+        Component text = Component.translatable("info.megatools.dig").append("3x3").withStyle(ChatFormatting.GRAY);
         tooltipComponents.add(text);
     }
 

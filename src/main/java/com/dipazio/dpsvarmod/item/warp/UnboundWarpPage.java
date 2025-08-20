@@ -3,7 +3,6 @@ package com.dipazio.dpsvarmod.item.warp;
 import com.dipazio.dpsvarmod.gui.screen.WarpPageNameScreen;
 import com.dipazio.dpsvarmod.packet.packets.warp.BindPacket;
 import com.dipazio.dpsvarmod.packet.PacketHandler;
-import com.dipazio.dpsvarmod.register.DPsItems;
 import com.dipazio.dpsvarmod.util.ItemsFuncs;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -49,7 +48,7 @@ public class UnboundWarpPage extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        Component text = Component.literal("No teleport data, Use to save a position").withStyle(ChatFormatting.GRAY);
+        Component text = Component.translatable("info.warp.binds_use").withStyle(ChatFormatting.GRAY);
         tooltipComponents.add(text);
     }
 

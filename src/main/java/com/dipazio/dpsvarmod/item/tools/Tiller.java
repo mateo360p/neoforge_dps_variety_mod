@@ -50,7 +50,7 @@ public class Tiller extends DpDiggerItem {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        Component text = Component.literal("Break limit: " + RANGE).withStyle(ChatFormatting.GRAY);
+        Component text = Component.translatable("info.megatools.break").append( "" + RANGE).withStyle(ChatFormatting.GRAY);
         tooltipComponents.add(text);
     }
 

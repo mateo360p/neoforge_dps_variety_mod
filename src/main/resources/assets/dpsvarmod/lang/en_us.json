@@ -23,6 +23,9 @@
   "item.dpsvarmod.golden_tiller": "Golden Tiller",
   "item.dpsvarmod.diamond_tiller": "Diamond Tiller",
 
+  "info.megatools.dig": "Dig area: ",
+  "info.megatools.break": "Break limit: ",
+
 
   "item.dpsvarmod.combined_rotten_flesh": "Combined Rotten Flesh",
   "block.dpsvarmod.carrot_basket": "Carrot Basket",
@@ -35,8 +38,23 @@
   "item.dpsvarmod.unbound_warp_page": "Unbound Warp Page",
   "item.dpsvarmod.bound_warp_page": "Bound Warp Page",
   "item.dpsvarmod.player_warp_page": "Player Warp Page",
-  "gui.warp_book": "Warp Book",
+  
+  "gui.warp.book_inventory": "Warp Book",
+  "gui.warp.book_teleport": "Warp to waypoint",
+  "gui.warp.bind": "Bind Page",
+  "gui.warp.bind_enter": "Enter waypoint name",
+
+  "info.warp.binds_pos": "Saved position: ",
+  "info.warp.binds_num": "#Binds: ",
+  "info.warp.binds_zero": "No Binds, use while shifting to save bound pages",   
+  "info.warp.binds_none": "No teleport data",
+  "info.warp.binds_use": "No teleport data, use to save a position",
+  "info.warp.binds_yourself": "(That's you!, you cannot teleport to yourself)",
+
 
   "creativetab.dpsvarmod.modtab_megatools": "DP's Mega-Tools",
-  "creativetab.dpsvarmod.modtab_vanilla_extras": "DP's Vanilla Extras"
+  "creativetab.dpsvarmod.modtab_vanilla_extras": "DP's Vanilla Extras",
+
+  "gui.generic.done": "Done",
+  "gui.generic.close": "Close"
 }

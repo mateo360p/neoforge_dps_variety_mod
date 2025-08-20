@@ -15,7 +15,7 @@ public class WarpPageNameScreen extends Screen {
     private Button doneButton;
 
     public WarpPageNameScreen(Consumer<String> callback) {
-        super(Component.literal("Bind Page"));
+        super(Component.translatable("gui.warp.bind"));
         this.callback = callback;
     }
 
@@ -25,7 +25,7 @@ public class WarpPageNameScreen extends Screen {
         this.textField.setMaxLength(32);
         this.addWidget(textField);
 
-        this.doneButton = this.addRenderableWidget(Button.builder(Component.literal("Done"), button -> {
+        this.doneButton = this.addRenderableWidget(Button.builder(Component.translatable("gui.generic.done"), button -> {
             if (callback != null) callback.accept(textField.getValue());
             this.onClose();
         }).bounds(this.width / 2 - 100, this.height / 2 + 20, 200, 20).build());
@@ -36,7 +36,7 @@ public class WarpPageNameScreen extends Screen {
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
         this.renderBackground(guiGraphics, mouseX, mouseY, partialTick);
         super.render(guiGraphics, mouseX, mouseY, partialTick);
-        guiGraphics.drawString(this.font, "Enter waypoint name",
+        guiGraphics.drawString(this.font, Component.translatable("gui.warp.bind_enter"),
                 this.textField.getX(),
                 textField.getY() - font.lineHeight - 2,
                 10526880, false);
@@ -50,7 +50,6 @@ public class WarpPageNameScreen extends Screen {
     @Override
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
         if (keyCode == GLFW.GLFW_KEY_ENTER) {
-            //callback.accept(textField.getValue());
             this.onClose();
             return true;
         }

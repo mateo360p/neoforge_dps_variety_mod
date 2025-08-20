@@ -39,16 +39,17 @@ public class BoundWarpPage extends Item {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         CompoundTag data = ItemsFuncs.getData(stack);
+        
         if (!hasTpData(ItemsFuncs.getData(stack))) {
-            Component text = Component.literal("No teleport data").withStyle(ChatFormatting.GRAY);
+            Component text = Component.translatable("info.warp.binds_none").withStyle(ChatFormatting.GRAY);
             tooltipComponents.add(text);
         } else {
             tooltipComponents.add(Component.literal(data.getString("waypoint_name")).withStyle(ChatFormatting.GRAY));
-            Component text = Component.literal("Saved position: " +
+            Component text = Component.translatable("info.warp.binds_pos").append((
                     String.format("%.2f", data.getDouble("tp_X")) + ", " +
                     String.format("%.2f", data.getDouble("tp_Y")) + ", " +
                     String.format("%.2f", data.getDouble("tp_Z")))
-                    .withStyle(ChatFormatting.GRAY);
+                    ).withStyle(ChatFormatting.GRAY);
             tooltipComponents.add(text);
         }
     }

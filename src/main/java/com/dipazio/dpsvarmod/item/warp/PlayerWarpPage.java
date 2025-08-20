@@ -43,7 +43,7 @@ public class PlayerWarpPage extends Item {
         CompoundTag data = ItemsFuncs.getData(stack);
 
         if (!hasTpData(ItemsFuncs.getData(stack))) {
-            Component text = Component.literal("No teleport data").withStyle(ChatFormatting.GRAY);
+            Component text = Component.translatable("info.warp.binds_none").withStyle(ChatFormatting.GRAY);
             tooltipComponents.add(text);
         } else {
             tooltipComponents.add(Component.literal(data.getString("player_name")).withStyle(ChatFormatting.GRAY));
@@ -52,7 +52,7 @@ public class PlayerWarpPage extends Item {
                 try {
                     UUID boundUUID = UUID.fromString(data.getString("uuid"));
                     if (boundUUID.equals(daPlayer.getUUID())) {
-                        tooltipComponents.add(Component.literal("(That's you!, you cannot teleport to yourself)").withStyle(ChatFormatting.RED, ChatFormatting.ITALIC));
+                        tooltipComponents.add(Component.translatable("info.warp.binds_yourself").withStyle(ChatFormatting.RED, ChatFormatting.ITALIC));
                     }
                 } catch (Exception ignored) {}
             }
