@@ -7,8 +7,12 @@ import com.dipazio.dpsvarmod.util.ItemsFuncs;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleMenuProvider;
@@ -18,6 +22,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.portal.TeleportTransition;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 import java.util.List;
@@ -116,5 +122,112 @@ public class WarpBook extends Item {
         if (hasInventoryData(ItemsFuncs.getData(stack))) {
             handler.deserializeNBT(provider, ItemsFuncs.getData(stack).getCompound("inventory"));
         }
+    }
+
+    public static boolean doFancyTeleport(
+            ServerPlayer player,
+            ResourceKey<Level> dimension,
+            double toX,
+            double toY,
+            double toZ,
+            double rotX,
+            double rotY
+    ) {
+        ServerLevel newLevel;
+        try { // idk
+            if (dimension == null) return false;
+            newLevel = player.getServer().getLevel(dimension);
+            if (newLevel == null) return false;
+        } catch (Exception ignored) {
+            return false;
+        }
+
+        double x = player.getX();
+        double y = player.getY();
+        double z = player.getZ();
+
+        // Leaves
+        Level oldLevel = player.level();
+        if (!oldLevel.isClientSide()) {
+            ((ServerLevel) oldLevel).sendParticles(
+                    ParticleTypes.PORTAL,
+                    true,
+                    true,
+                    x + 0.5,
+                    y + 1.0,
+                    z + 0.5,
+                    150,
+                    0.5,
+                    0.25,
+                    0.5,
+                    1.5
+            );
+        }
+
+        double traveledDistance = (!oldLevel.dimension().equals(dimension)) ?
+                Double.POSITIVE_INFINITY :
+                Math.sqrt(sqr(toX - x) + sqr(toY - y) + sqr(toZ - z));
+
+        try {
+            player.teleport(new TeleportTransition(newLevel, new Vec3(toX, toY, toZ), Vec3.ZERO, (float) rotY, (float) rotX, TeleportTransition.DO_NOTHING));
+            player.causeFoodExhaustion((float) BoundWarpPage.calcWarpHungerExhaustion(traveledDistance, player.level().getDifficulty()));
+        } catch(Exception dummy) {
+            System.out.println("Error on teleport: " + dummy); // idk
+            return false;
+        }
+
+        // Arrives
+        if (!newLevel.isClientSide()) {
+            newLevel.sendParticles(
+                    ParticleTypes.LARGE_SMOKE,
+                    true,
+                    true,
+                    toX,
+                    toY + 1.0,
+                    toZ,
+                    250,
+                    0.5,
+                    1.0,
+                    0.5,
+                    0.1
+            );
+
+            newLevel.sendParticles(
+                    ParticleTypes.PORTAL,
+                    true,
+                    true,
+                    toX + 0.5,
+                    toY + 1.0,
+                    toZ + 0.5,
+                    140,
+                    0.0,
+                    1.0,
+                    0.0,
+                    1.0
+            );
+        }
+        return true;
+    }
+
+    public static void sendCloudParticles(ServerPlayer player) {
+        ServerLevel level = (ServerLevel) player.level();
+        level.sendParticles(
+                ParticleTypes.CLOUD,
+                true,
+                true,
+                player.getX(),
+                player.getY() + 0.5,
+                player.getZ(),
+                65,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+        );
+    }
+
+    // XD
+    public static double sqr(double x) {
+        return x * x;
     }
 }

@@ -5,6 +5,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -65,12 +66,29 @@ public class PlayerWarpPage extends Item {
         teleportPlayer(serverPlayer, playerUUID);
     }
 
-    public static void teleportPlayer(ServerPlayer serverPlayer, String playerUUID) {
-        ServerPlayer toPlayer = serverPlayer.getServer().getPlayerList().getPlayer(UUID.fromString(playerUUID));
+    public static void teleportPlayer(ServerPlayer player, String toPlayerUUID) {
+        if (player.getStringUUID().equals(toPlayerUUID)) {
+            WarpBook.sendCloudParticles(player);
+            return;
+        }
 
-        if (toPlayer == null) return;
+        ServerPlayer toPlayer;
+        ResourceKey<Level> dimension;
+        try {
+            toPlayer = player.getServer().getPlayerList().getPlayer(UUID.fromString(toPlayerUUID));
+            dimension = toPlayer.level().dimension();
+        } catch(Exception ignored) {
+            WarpBook.sendCloudParticles(player);
+            return;
+        }
 
-        BoundWarpPage.teleportPlayer(serverPlayer, toPlayer.level().dimension(), toPlayer.getX(), toPlayer.getY(), toPlayer.getZ(), serverPlayer.getXRot(), serverPlayer.getYRot());
+        if (!WarpBook.doFancyTeleport(
+                player, dimension,
+                toPlayer.getX(), toPlayer.getY(), toPlayer.getZ(),
+                player.getXRot(), player.getYRot()
+        )) {
+            WarpBook.sendCloudParticles(player);
+        }
     }
 
     boolean hasTpData(CompoundTag data) {

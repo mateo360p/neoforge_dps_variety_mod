@@ -5,7 +5,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Difficulty;
@@ -16,8 +15,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.portal.TeleportTransition;
-import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
 
@@ -66,18 +63,22 @@ public class BoundWarpPage extends Item {
         double yRot = data.getDouble("rot_Y");
         String dim = data.getString("dimension");
 
-        teleportPlayer(serverPlayer, UnboundWarpPage.returnDimension(dim), x, y, z, xRot, yRot);
+        teleportPlayer(serverPlayer, dim, x, y, z, xRot, yRot);
     }
 
     public static void teleportPlayer(
-            ServerPlayer player, ResourceKey<Level> dimension,
+            ServerPlayer player, String dim,
             double x, double y, double z,
-            double xRotation, double yRotation) {
-        if (dimension == null) return;
-        ServerLevel newLevel = player.getServer().getLevel(dimension);
+            double xRot, double yRot) {
+        ResourceKey<Level> dimension = UnboundWarpPage.returnDimension(dim);
 
-        if (newLevel == null) return;
-        player.teleport(new TeleportTransition(newLevel, new Vec3(x, y, z), Vec3.ZERO, (float) yRotation, (float) xRotation, TeleportTransition.DO_NOTHING));
+        if (!WarpBook.doFancyTeleport(
+                player, dimension,
+                x, y, z,
+                xRot, yRot
+        )) {
+            WarpBook.sendCloudParticles(player);
+        }
     }
 
     boolean hasTpData(CompoundTag data) {
