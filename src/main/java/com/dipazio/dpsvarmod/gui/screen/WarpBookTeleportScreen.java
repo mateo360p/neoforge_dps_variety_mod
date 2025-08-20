@@ -14,10 +14,9 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.lwjgl.glfw.GLFW;
 
-import java.util.function.Consumer;
-
 public class WarpBookTeleportScreen extends Screen {
     private final ItemStackHandler items;
+    private boolean isBookEmpty = true;
 
     public WarpBookTeleportScreen(ItemStackHandler bookItems) {
         super(Component.translatable( "gui.warp.book_teleport"));
@@ -35,6 +34,8 @@ public class WarpBookTeleportScreen extends Screen {
         for(int slot = 1; slot < this.items.getSlots(); ++slot) {
             ItemStack stack = items.getStackInSlot(slot);
             if (stack.isEmpty()) continue;
+
+            isBookEmpty = false;
 
             CompoundTag data = ItemsFuncs.getData(stack);
             id++;
@@ -72,6 +73,10 @@ public class WarpBookTeleportScreen extends Screen {
         super.render(guiGraphics, mouseX, mouseY, partialTick);
 
         guiGraphics.drawCenteredString(this.font, this.title, this.width / 2, 5, 16777215);
+
+        if (isBookEmpty) {
+            guiGraphics.drawCenteredString(this.font, Component.translatable("advancements.empty"), this.width / 2, 32, 10526880);
+        }
     }
 
     @Override
