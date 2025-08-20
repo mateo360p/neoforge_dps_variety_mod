@@ -2,6 +2,8 @@ package com.dipazio.dpsvarmod.gui.screen;
 
 import com.dipazio.dpsvarmod.packet.PacketHandler;
 import com.dipazio.dpsvarmod.packet.packets.warp.TeleportPacket;
+import com.dipazio.dpsvarmod.packet.packets.warp.TeleportToPlayerPacket;
+import com.dipazio.dpsvarmod.register.DPsItems;
 import com.dipazio.dpsvarmod.util.ItemsFuncs;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -11,6 +13,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.lwjgl.glfw.GLFW;
+
+import java.util.function.Consumer;
 
 public class WarpBookTeleportScreen extends Screen {
     private final ItemStackHandler items;
@@ -36,14 +40,28 @@ public class WarpBookTeleportScreen extends Screen {
             id++;
 
             try {
-                this.addRenderableWidget(Button.builder(Component.literal(data.getString("waypoint_name")), button -> {
-                    TeleportPacket packet = new TeleportPacket(
-                            data.getDouble("tp_X"),
-                            data.getDouble("tp_Y"),
-                            data.getDouble("tp_Z"));
-                    PacketHandler.sendToServer(packet);
-                    this.onClose();
-                }).bounds((this.width - 404) / 2 + id % 6 * 68, 16 + 24 * (id / 6), 64, 16).build());
+                boolean isPlayerPage = stack.getItem().equals(DPsItems.PLAYER_WARP_PAGE.get());
+
+                this.addRenderableWidget(Button.builder(Component.literal(data.getString(isPlayerPage ? "player_name" : "waypoint_name")),
+                    isPlayerPage ?
+                        button -> {
+                            TeleportToPlayerPacket packet = new TeleportToPlayerPacket(
+                                    data.getString("uuid"));
+                            PacketHandler.sendToServer(packet);
+                            this.onClose();
+                        } :
+                        button -> {
+                            TeleportPacket packet = new TeleportPacket(
+                                    data.getDouble("tp_X"),
+                                    data.getDouble("tp_Y"),
+                                    data.getDouble("tp_Z"),
+                                    data.getDouble("rot_X"),
+                                    data.getDouble("rot_Y"),
+                                    data.getString("dimension"));
+                            PacketHandler.sendToServer(packet);
+                            this.onClose();
+                        }
+                ).bounds((this.width - 404) / 2 + id % 6 * 68, 16 + 24 * (id / 6), 64, 16).build());
             } catch (Exception ignored) {} // just in case
         }
     }

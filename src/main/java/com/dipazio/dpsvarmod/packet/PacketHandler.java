@@ -3,6 +3,7 @@ package com.dipazio.dpsvarmod.packet;
 import com.dipazio.dpsvarmod.DPsVarietyMod;
 import com.dipazio.dpsvarmod.packet.packets.warp.BindPacket;
 import com.dipazio.dpsvarmod.packet.packets.warp.TeleportPacket;
+import com.dipazio.dpsvarmod.packet.packets.warp.TeleportToPlayerPacket;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -20,12 +21,14 @@ import java.util.Optional;
 public class PacketHandler {
     public static final String TELEPORT_WARP_PACKET_PATH = "teleport_warp_packet";
     public static final String BIND_WARP_PACKET_PATH = "bind_warp_packet";
+    public static final String TELEPORT_PLAYER_WARP_PACKET_PATH = "teleport_player_warp_packet";
 
     public static void registerMessages(RegisterPayloadHandlersEvent event) {
         PayloadRegistrar registrar = event.registrar(DPsVarietyMod.MODID);
 
         registerMessage(registrar, TeleportPacket.STREAM_CODEC, TELEPORT_WARP_PACKET_PATH, PacketFlow.SERVERBOUND);
         registerMessage(registrar, BindPacket.STREAM_CODEC, BIND_WARP_PACKET_PATH, PacketFlow.SERVERBOUND);
+        registerMessage(registrar, TeleportToPlayerPacket.STREAM_CODEC, TELEPORT_PLAYER_WARP_PACKET_PATH, PacketFlow.SERVERBOUND);
     }
 
     public static <T extends IPacketExtension> void registerMessage(

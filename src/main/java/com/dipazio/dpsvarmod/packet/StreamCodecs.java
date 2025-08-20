@@ -1,10 +1,13 @@
 package com.dipazio.dpsvarmod.packet;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.Utf8String;
 import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 
 public class StreamCodecs {
     public static final StreamCodec<RegistryFriendlyByteBuf, ItemStack> ITEM_STACK_CODEC;
@@ -12,6 +15,7 @@ public class StreamCodecs {
     public static final StreamCodec<RegistryFriendlyByteBuf, InteractionHand> HAND_CODEC;
     public static final StreamCodec<RegistryFriendlyByteBuf, Double> DOUBLE_CODEC;
     public static final StreamCodec<RegistryFriendlyByteBuf, Boolean> BOOLEAN_CODEC;
+    public static final StreamCodec<RegistryFriendlyByteBuf, ResourceKey<Level>> DIMENSION_CODEC;
 
     static {
         ITEM_STACK_CODEC = ItemStack.OPTIONAL_STREAM_CODEC;
@@ -47,6 +51,17 @@ public class StreamCodecs {
             @Override
             public Boolean decode(RegistryFriendlyByteBuf buf) {
                 return buf.readBoolean();
+            }
+        };
+        DIMENSION_CODEC = new StreamCodec<>() {
+            @Override
+            public void encode(RegistryFriendlyByteBuf buf, ResourceKey key) {
+                buf.writeResourceKey(key);
+            }
+
+            @Override
+            public ResourceKey decode(RegistryFriendlyByteBuf buf) {
+                return buf.readResourceKey(Registries.DIMENSION);
             }
         };
     }

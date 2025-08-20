@@ -96,7 +96,8 @@ public class WarpBook extends Item {
             @Override
             public boolean isItemValid(int slot, ItemStack stack) {
                 if (slot == 0) return false; // Future Death Paper
-                return (stack.getItem() == DPsItems.BOUND_WARP_PAGE.get());
+                return (stack.getItem() == DPsItems.BOUND_WARP_PAGE.get() ||
+                        stack.getItem() == DPsItems.PLAYER_WARP_PAGE.get());
             }
         };
 

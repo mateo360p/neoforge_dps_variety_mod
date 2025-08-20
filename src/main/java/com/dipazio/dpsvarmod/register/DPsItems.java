@@ -9,6 +9,7 @@ import com.dipazio.dpsvarmod.item.tools.Digger;
 import com.dipazio.dpsvarmod.item.tools.Hammer;
 import com.dipazio.dpsvarmod.item.tools.Tiller;
 import com.dipazio.dpsvarmod.item.warp.BoundWarpPage;
+import com.dipazio.dpsvarmod.item.warp.PlayerWarpPage;
 import com.dipazio.dpsvarmod.item.warp.WarpBook;
 import com.dipazio.dpsvarmod.item.warp.UnboundWarpPage;
 import net.minecraft.world.item.*;
@@ -74,6 +75,8 @@ public class DPsItems {
             UnboundWarpPage::new);
     public static final DeferredItem<Item> BOUND_WARP_PAGE = ITEMS.registerItem("bound_warp_page",
             BoundWarpPage::new);
+    public static final DeferredItem<Item> PLAYER_WARP_PAGE = ITEMS.registerItem("player_warp_page",
+            PlayerWarpPage::new);
 
     public static void registerItems(IEventBus eBus) {
         ITEMS.register(eBus);

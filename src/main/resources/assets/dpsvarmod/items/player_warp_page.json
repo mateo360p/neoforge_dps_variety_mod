@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "dpsvarmod:item/warp_book/player_warp_page"
+  }
+}

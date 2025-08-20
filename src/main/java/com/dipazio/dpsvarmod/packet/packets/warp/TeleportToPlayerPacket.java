@@ -1,6 +1,7 @@
 package com.dipazio.dpsvarmod.packet.packets.warp;
 
 import com.dipazio.dpsvarmod.item.warp.BoundWarpPage;
+import com.dipazio.dpsvarmod.item.warp.PlayerWarpPage;
 import com.dipazio.dpsvarmod.item.warp.UnboundWarpPage;
 import com.dipazio.dpsvarmod.packet.IPacketToServer;
 import com.dipazio.dpsvarmod.packet.PacketHandler;
@@ -14,26 +15,40 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.UUID;
+
 // I hate packets
-public record TeleportPacket(double x, double y, double z, double xRot, double yRot, String dim) implements IPacketToServer {
-    public static final StreamCodec<RegistryFriendlyByteBuf, TeleportPacket> STREAM_CODEC;
+public record TeleportToPlayerPacket(String toPlayerUUID) implements IPacketToServer {
+    public static final StreamCodec<RegistryFriendlyByteBuf, TeleportToPlayerPacket> STREAM_CODEC;
 
     static {
         STREAM_CODEC = StreamCodec.composite(
-                StreamCodecs.DOUBLE_CODEC, TeleportPacket::x,
-                StreamCodecs.DOUBLE_CODEC, TeleportPacket::y,
-                StreamCodecs.DOUBLE_CODEC, TeleportPacket::z,
-                StreamCodecs.DOUBLE_CODEC, TeleportPacket::xRot,
-                StreamCodecs.DOUBLE_CODEC, TeleportPacket::yRot,
-                StreamCodecs.STRING_CODEC, TeleportPacket::dim,
-                TeleportPacket::new
+                StreamCodecs.STRING_CODEC, TeleportToPlayerPacket::toPlayerUUID,
+                TeleportToPlayerPacket::new
         );
     }
 
     @Override
     public void onCall(ServerPlayer player) {
+        if (player.getStringUUID().equals(toPlayerUUID)) return;
+
         Vec3 oldPos = player.position();
-        ResourceKey<Level> dimension = UnboundWarpPage.returnDimension(dim);
+        ServerPlayer toPlayer;
+
+        try {
+            toPlayer = player.getServer().getPlayerList().getPlayer(UUID.fromString(toPlayerUUID));
+        } catch(Exception ignored) {
+            return;
+        }
+
+        if (toPlayer == null) return;
+
+        ResourceKey<Level> dimension = toPlayer.level().dimension();
+
+        double x = toPlayer.getX();
+        double y = toPlayer.getY();
+        double z = toPlayer.getZ();
+
         // Leaves
         Level oldLevel = player.level();
         if (!oldLevel.isClientSide()) {
@@ -57,7 +72,7 @@ public record TeleportPacket(double x, double y, double z, double xRot, double y
                 Math.sqrt(sqr(x - oldPos.x) + sqr(y - oldPos.y) + sqr(z - oldPos.z));
 
         // Teleport
-        BoundWarpPage.teleportPlayer(player, dimension, x, y, z, xRot, yRot);
+        PlayerWarpPage.teleportPlayer(player, toPlayerUUID);
         player.causeFoodExhaustion((float) BoundWarpPage.calcWarpHungerExhaustion(traveledDistance, player.level().getDifficulty()));
 
         // Arrives
@@ -68,9 +83,9 @@ public record TeleportPacket(double x, double y, double z, double xRot, double y
                         ParticleTypes.LARGE_SMOKE,
                         true,
                         true,
-                        this.x,
-                        this.y + 1.0,
-                        this.z,
+                        x,
+                        y + 1.0,
+                        z,
                         225,
                         0.5,
                         1.0,
@@ -82,9 +97,9 @@ public record TeleportPacket(double x, double y, double z, double xRot, double y
                     ParticleTypes.PORTAL,
                     true,
                     true,
-                    this.x + 0.5,
-                    this.y + 1.0,
-                    this.z + 0.5,
+                    x + 0.5,
+                    y + 1.0,
+                    z + 0.5,
                     120,
                     0.0,
                     1.0,
@@ -101,6 +116,6 @@ public record TeleportPacket(double x, double y, double z, double xRot, double y
 
     @Override
     public String getPacketPath() {
-        return PacketHandler.TELEPORT_WARP_PACKET_PATH;
+        return PacketHandler.TELEPORT_PLAYER_WARP_PACKET_PATH;
     }
 }

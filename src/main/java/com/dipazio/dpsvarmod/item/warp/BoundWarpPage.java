@@ -4,7 +4,11 @@ import com.dipazio.dpsvarmod.util.ItemsFuncs;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.Mth;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -12,6 +16,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.portal.TeleportTransition;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
 
@@ -56,11 +62,38 @@ public class BoundWarpPage extends Item {
         double x = data.getDouble("tp_X");
         double y = data.getDouble("tp_Y");
         double z = data.getDouble("tp_Z");
+        double xRot = data.getDouble("rot_X");
+        double yRot = data.getDouble("rot_Y");
+        String dim = data.getString("dimension");
 
-        serverPlayer.teleportTo(x, y, z);
+        teleportPlayer(serverPlayer, UnboundWarpPage.returnDimension(dim), x, y, z, xRot, yRot);
+    }
+
+    public static void teleportPlayer(
+            ServerPlayer player, ResourceKey<Level> dimension,
+            double x, double y, double z,
+            double xRotation, double yRotation) {
+        if (dimension == null) return;
+        ServerLevel newLevel = player.getServer().getLevel(dimension);
+
+        if (newLevel == null) return;
+        player.teleport(new TeleportTransition(newLevel, new Vec3(x, y, z), Vec3.ZERO, (float) yRotation, (float) xRotation, TeleportTransition.DO_NOTHING));
     }
 
     boolean hasTpData(CompoundTag data) {
         return data.contains("tp_X") && data.contains("tp_Y") && data.contains("tp_Z") && data.contains("waypoint_name");
+    }
+
+    public static double calcWarpHungerExhaustion(double distance, Difficulty difficulty) {
+        distance = Mth.clamp(distance, 250.0, 20000.0);
+        double distTax = distance * 0.005;
+        double diffTax = switch (difficulty) {
+            case EASY -> 1.0;
+            case HARD -> 2.25;
+            case PEACEFUL -> 0.0;
+            default -> 1.75; // NORMAL and others idk
+        };
+
+        return distTax * diffTax;
     }
 }
