@@ -57,13 +57,20 @@ public class CreativeModeTabs {
                         output.accept(DPsBlocks.POTATO_BASKET);
                         output.accept(DPsBlocks.BEETROOT_BASKET);
                         output.accept(DPsItems.COMBINED_ROTTEN_FLESH);
+                    }).build()
+    );
 
+    public static final Supplier<CreativeModeTab> DPS_TAB_WARP_BOOK = CREATIVE_MODE_TABS.register("dps_tab_warp_book",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(DPsItems.WARP_BOOK.get()))
+                    .title(Component.translatable("creativetab.dpsvarmod.modtab_warp_book"))
+                    .displayItems((itemDisplayParameters, output) -> {
                         output.accept(DPsItems.WARP_BOOK);
                         output.accept(DPsItems.UNBOUND_WARP_PAGE);
                         output.accept(DPsItems.DEATH_WARP_PAGE);
-
                     }).build()
     );
+
+
 
 
     public static void register(IEventBus eventBus){
