@@ -21,7 +21,7 @@ import java.util.UUID;
 public class PlayerWarpPage extends Item {
 
     public PlayerWarpPage(Properties properties) {
-        super(properties);
+        super(properties.stacksTo(1));
     }
 
     @Override

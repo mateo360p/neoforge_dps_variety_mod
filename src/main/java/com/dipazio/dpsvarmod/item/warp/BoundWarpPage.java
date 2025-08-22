@@ -19,7 +19,7 @@ import java.util.List;
 public class BoundWarpPage extends Item {
 
     public BoundWarpPage(Properties properties) {
-        super(properties);
+        super(properties.stacksTo(16));
     }
 
     @Override

@@ -27,7 +27,7 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 @Mod(DPsVarietyMod.MODID)
 public class DPsVarietyMod
 {
-    final String CODE_VERSION = "0.2.3.2"; // Just to verify the code version, this doesn't do anything!
+    final String CODE_VERSION = "0.2.3.3"; // Just to verify the code version, this doesn't do anything!
     // Yes, i'm following a tutorial ok?
     public static final String MODID = "dpsvarmod";
     private static final Logger LOGGER = LogUtils.getLogger();
