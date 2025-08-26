@@ -32,6 +32,15 @@
   "block.dpsvarmod.potato_basket": "Potato Basket",
   "block.dpsvarmod.apple_basket": "Apple Basket",
   "block.dpsvarmod.beetroot_basket": "Beetroot Basket",
+  "block.dpsvarmod.stone_wall": "Stone Wall",
+  "block.dpsvarmod.stone_tiles": "Stone Tiles",
+  "block.dpsvarmod.stone_tile_slab": "Stone Tile Slab",
+  "block.dpsvarmod.stone_tile_stairs": "Stone Tile Stairs",
+  "block.dpsvarmod.stone_tile_wall": "Stone Tile Wall",
+  "block.dpsvarmod.deepslate_slab": "Deepslate Slab",
+  "block.dpsvarmod.deepslate_stairs": "Deepslate Stairs",
+  "block.dpsvarmod.deepslate_wall": "Deepslate Wall",
+  "block.dpsvarmod.chiseled_blackstone": "Chiseled Blackstone",
 
 
   "item.dpsvarmod.warp_book": "Warp Book",

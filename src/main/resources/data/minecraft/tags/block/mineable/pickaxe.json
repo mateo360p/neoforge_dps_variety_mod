@@ -1,0 +1,13 @@
+{
+    "values": [
+        "dpsvarmod:stone_wall",
+        "dpsvarmod:stone_tiles",
+        "dpsvarmod:stone_tile_slab",
+        "dpsvarmod:stone_tile_stairs",
+        "dpsvarmod:stone_tile_wall",
+        "dpsvarmod:deepslate_slab",
+        "dpsvarmod:deepslate_stairs",
+        "dpsvarmod:deepslate_wall",
+        "dpsvarmod:chiseled_blackstone"
+    ]
+}

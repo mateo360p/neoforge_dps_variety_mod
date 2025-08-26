@@ -52,11 +52,23 @@ public class CreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(DPsBlocks.APPLE_BASKET.get()))
                     .title(Component.translatable("creativetab.dpsvarmod.modtab_vanilla_extras"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(DPsItems.COMBINED_ROTTEN_FLESH);
                         output.accept(DPsBlocks.APPLE_BASKET);
                         output.accept(DPsBlocks.CARROT_BASKET);
                         output.accept(DPsBlocks.POTATO_BASKET);
                         output.accept(DPsBlocks.BEETROOT_BASKET);
-                        output.accept(DPsItems.COMBINED_ROTTEN_FLESH);
+
+                        output.accept(DPsBlocks.STONE_WALL);
+                        output.accept(DPsBlocks.STONE_TILES);
+                        output.accept(DPsBlocks.STONE_TILE_SLAB);
+                        output.accept(DPsBlocks.STONE_TILE_STAIRS);
+                        output.accept(DPsBlocks.STONE_TILE_WALL);
+
+                        output.accept(DPsBlocks.DEEPSLATE_SLAB);
+                        output.accept(DPsBlocks.DEEPSLATE_STAIRS);
+                        output.accept(DPsBlocks.DEEPSLATE_WALL);
+
+                        output.accept(DPsBlocks.CHISELED_BLACKSTONE);
                     }).build()
     );
 

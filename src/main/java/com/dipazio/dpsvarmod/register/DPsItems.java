@@ -2,7 +2,6 @@ package com.dipazio.dpsvarmod.register;
 
 import com.dipazio.dpsvarmod.DPsVarietyMod;
 import com.dipazio.dpsvarmod.item._material.MegaToolMaterial;
-import com.dipazio.dpsvarmod.item._material.VanillaToolMaterial;
 import com.dipazio.dpsvarmod.item._parents.grand.DpFoodItem;
 import com.dipazio.dpsvarmod.item.tools.Chopper;
 import com.dipazio.dpsvarmod.item.tools.Digger;
@@ -36,8 +35,9 @@ public class DPsItems {
             (properties) -> new Hammer(MegaToolMaterial.IRON, 6.0F, 0.4F, properties));
     public static final DeferredItem<Item> GOLDEN_HAMMER = ITEMS.registerItem("golden_hammer",
             (properties) -> new Hammer(MegaToolMaterial.GOLD, 4.0F, 0.4F, properties));
+    // Whatha, but-, I'm stupid
     public static final DeferredItem<Item> DIAMOND_HAMMER = ITEMS.registerItem("diamond_hammer",
-            (properties) -> new Hammer(VanillaToolMaterial.DIAMOND, 7.0F, 0.4F, properties));
+            (properties) -> new Hammer(MegaToolMaterial.DIAMOND, 7.0F, 0.4F, properties));
 
     public static final DeferredItem<Item> WOODEN_CHOPPER = ITEMS.registerItem("wooden_chopper",
             (properties) -> new Chopper(MegaToolMaterial.WOOD, 8, 8.0F, 0.2F, properties).setBurnTime(200));
