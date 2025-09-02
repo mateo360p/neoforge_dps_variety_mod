@@ -42,6 +42,9 @@
   "block.dpsvarmod.deepslate_wall": "Deepslate Wall",
   "block.dpsvarmod.chiseled_blackstone": "Chiseled Blackstone",
 
+  "block.dpsvarmod.nether_iron_ore": "Nether Iron Ore",
+  "block.dpsvarmod.nether_diamond_ore": "Nether Diamond Ore",
+
 
   "item.dpsvarmod.warp_book": "Warp Book",
   "item.dpsvarmod.unbound_warp_page": "Unbound Warp Page",

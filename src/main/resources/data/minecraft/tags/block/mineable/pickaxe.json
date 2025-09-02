@@ -8,6 +8,8 @@
         "dpsvarmod:deepslate_slab",
         "dpsvarmod:deepslate_stairs",
         "dpsvarmod:deepslate_wall",
-        "dpsvarmod:chiseled_blackstone"
+        "dpsvarmod:chiseled_blackstone",
+        "dpsvarmod:nether_diamond_ore",
+        "dpsvarmod:nether_iron_ore"
     ]
 }

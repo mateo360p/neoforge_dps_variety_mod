@@ -1,0 +1,10 @@
+{
+    "type": "neoforge:add_features",
+    "biomes": "#minecraft:is_nether",
+    "features": [
+        "dpsvarmod:ore_diamond_nether",
+        "dpsvarmod:ore_diamond_nether_medium",
+        "dpsvarmod:ore_diamond_nether_large"
+    ],
+    "step": "underground_ores"
+}

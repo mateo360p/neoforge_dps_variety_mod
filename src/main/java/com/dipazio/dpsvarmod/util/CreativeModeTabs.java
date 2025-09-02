@@ -69,6 +69,9 @@ public class CreativeModeTabs {
                         output.accept(DPsBlocks.DEEPSLATE_WALL);
 
                         output.accept(DPsBlocks.CHISELED_BLACKSTONE);
+
+                        output.accept(DPsBlocks.NETHER_IRON_ORE);
+                        output.accept(DPsBlocks.NETHER_DIAMOND_ORE);
                     }).build()
     );
 

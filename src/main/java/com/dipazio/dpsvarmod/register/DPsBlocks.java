@@ -1,6 +1,7 @@
 package com.dipazio.dpsvarmod.register;
 
 import com.dipazio.dpsvarmod.DPsVarietyMod;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -48,6 +49,12 @@ public class DPsBlocks {
             (properties) -> new SlabBlock(properties.mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> DEEPSLATE_WALL = registerBlockItem("deepslate_wall",
             (properties) -> new WallBlock(properties.mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.DEEPSLATE)));
+
+    public static final DeferredBlock<Block> NETHER_IRON_ORE = registerBlockItem("nether_iron_ore",
+            (properties) -> new DropExperienceBlock(UniformInt.of(0, 1), properties.mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F).sound(SoundType.NETHER_GOLD_ORE)));
+
+    public static final DeferredBlock<Block> NETHER_DIAMOND_ORE = registerBlockItem("nether_diamond_ore",
+            (properties) -> new DropExperienceBlock(UniformInt.of(4, 8), properties.mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F).sound(SoundType.NETHER_GOLD_ORE)));
 
     public static <B extends Block> DeferredBlock<B> registerBlockItem(String name, Function<BlockBehaviour.Properties, ? extends B> func) {
         DeferredBlock<B> daBlock = registerBlock(name, func);

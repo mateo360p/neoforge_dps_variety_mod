@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "dpsvarmod:block/vanilla_extras/nether_diamond_ore"
+    }
+  }
+}
