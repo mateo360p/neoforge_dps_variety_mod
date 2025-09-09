@@ -2,6 +2,18 @@
     "values": [
         "dpsvarmod:stone_wall",
         "dpsvarmod:stone_tile_wall",
-        "dpsvarmod:deepslate_wall"
+        "dpsvarmod:deepslate_wall",
+        "dpsvarmod:dripstone_block_wall",
+        "dpsvarmod:calcite_wall",
+        "dpsvarmod:basalt_wall",
+        "dpsvarmod:smooth_basalt_wall",
+        "dpsvarmod:polished_basalt_wall",
+        "dpsvarmod:smooth_stone_wall",
+        "dpsvarmod:quartz_block_wall",
+        "dpsvarmod:smooth_quartz_wall",
+        "dpsvarmod:quartz_brick_wall",
+        "dpsvarmod:polished_granite_wall",
+        "dpsvarmod:polished_diorite_wall",
+        "dpsvarmod:polished_andesite_wall"
     ]
 }

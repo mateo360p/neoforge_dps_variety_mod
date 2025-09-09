@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "dpsvarmod:block/vanilla_extras/quartz_brick_slab"
+        },
+        "type=double": {
+            "model": "minecraft:block/quartz_bricks"
+        },
+        "type=top": {
+            "model": "dpsvarmod:block/vanilla_extras/quartz_brick_slab_top"
+        }
+    }
+}

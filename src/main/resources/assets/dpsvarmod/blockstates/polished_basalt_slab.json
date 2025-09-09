@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "dpsvarmod:block/vanilla_extras/polished_basalt_slab"
+        },
+        "type=double": {
+            "model": "minecraft:block/polished_basalt"
+        },
+        "type=top": {
+            "model": "dpsvarmod:block/vanilla_extras/polished_basalt_slab_top"
+        }
+    }
+}

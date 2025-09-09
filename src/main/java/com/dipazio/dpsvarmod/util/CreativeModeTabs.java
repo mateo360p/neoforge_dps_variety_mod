@@ -57,21 +57,59 @@ public class CreativeModeTabs {
                         output.accept(DPsBlocks.CARROT_BASKET);
                         output.accept(DPsBlocks.POTATO_BASKET);
                         output.accept(DPsBlocks.BEETROOT_BASKET);
+                        output.accept(DPsBlocks.NETHER_IRON_ORE);
+                        output.accept(DPsBlocks.NETHER_DIAMOND_ORE);
+                    }).build()
+    );
 
+    public static final Supplier<CreativeModeTab> DPS_TAB_VANILLA_MISSING = CREATIVE_MODE_TABS.register("dps_tab_vanilla_missing",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(DPsBlocks.STONE_TILES.get()))
+                    .title(Component.translatable("creativetab.dpsvarmod.modtab_vanilla_missing"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(DPsBlocks.CHISELED_BLACKSTONE);
+
+                        output.accept(DPsBlocks.SMOOTH_STONE_STAIRS);
+                        output.accept(DPsBlocks.SMOOTH_STONE_WALL);
+
+                        output.accept(DPsBlocks.POLISHED_GRANITE_WALL);
+                        output.accept(DPsBlocks.POLISHED_DIORITE_WALL);
+                        output.accept(DPsBlocks.POLISHED_ANDESITE_WALL);
                         output.accept(DPsBlocks.STONE_WALL);
+                        output.accept(DPsBlocks.QUARTZ_BLOCK_WALL);
+                        output.accept(DPsBlocks.SMOOTH_QUARTZ_WALL);
+
+                        output.accept(DPsBlocks.QUARTZ_BRICK_STAIRS);
+                        output.accept(DPsBlocks.QUARTZ_BRICK_SLAB);
+                        output.accept(DPsBlocks.QUARTZ_BRICK_WALL);
+
                         output.accept(DPsBlocks.STONE_TILES);
-                        output.accept(DPsBlocks.STONE_TILE_SLAB);
                         output.accept(DPsBlocks.STONE_TILE_STAIRS);
+                        output.accept(DPsBlocks.STONE_TILE_SLAB);
                         output.accept(DPsBlocks.STONE_TILE_WALL);
 
                         output.accept(DPsBlocks.DEEPSLATE_SLAB);
                         output.accept(DPsBlocks.DEEPSLATE_STAIRS);
                         output.accept(DPsBlocks.DEEPSLATE_WALL);
 
-                        output.accept(DPsBlocks.CHISELED_BLACKSTONE);
+                        output.accept(DPsBlocks.DRIPSTONE_BLOCK_STAIRS);
+                        output.accept(DPsBlocks.DRIPSTONE_BLOCK_SLAB);
+                        output.accept(DPsBlocks.DRIPSTONE_BLOCK_WALL);
 
-                        output.accept(DPsBlocks.NETHER_IRON_ORE);
-                        output.accept(DPsBlocks.NETHER_DIAMOND_ORE);
+                        output.accept(DPsBlocks.CALCITE_STAIRS);
+                        output.accept(DPsBlocks.CALCITE_SLAB);
+                        output.accept(DPsBlocks.CALCITE_WALL);
+
+                        output.accept(DPsBlocks.BASALT_STAIRS);
+                        output.accept(DPsBlocks.BASALT_SLAB);
+                        output.accept(DPsBlocks.BASALT_WALL);
+
+                        output.accept(DPsBlocks.SMOOTH_BASALT_STAIRS);
+                        output.accept(DPsBlocks.SMOOTH_BASALT_SLAB);
+                        output.accept(DPsBlocks.SMOOTH_BASALT_WALL);
+
+                        output.accept(DPsBlocks.POLISHED_BASALT_STAIRS);
+                        output.accept(DPsBlocks.POLISHED_BASALT_SLAB);
+                        output.accept(DPsBlocks.POLISHED_BASALT_WALL);
                     }).build()
     );
 
