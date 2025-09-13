@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+    "key": {
+        "#": "dpsvarmod:polished_diorite_bricks"
+    },
+    "pattern": [
+        "###"
+    ],
+    "result": {
+        "count": 6,
+        "id": "dpsvarmod:polished_diorite_brick_slab"
+    }
+}

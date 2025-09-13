@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "dpsvarmod:block/vanilla_extras/polished_andesite_brick_slab"
+        },
+        "type=double": {
+            "model": "dpsvarmod:block/vanilla_extras/polished_andesite_bricks"
+        },
+        "type=top": {
+            "model": "dpsvarmod:block/vanilla_extras/polished_andesite_brick_slab_top"
+        }
+    }
+}

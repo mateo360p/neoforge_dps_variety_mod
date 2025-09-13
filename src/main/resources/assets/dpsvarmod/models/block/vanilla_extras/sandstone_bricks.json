@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "dpsvarmod:block/vanilla_extras/sandstone_bricks"
+    }
+}

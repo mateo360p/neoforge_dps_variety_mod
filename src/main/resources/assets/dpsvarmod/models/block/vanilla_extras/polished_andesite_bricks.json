@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "dpsvarmod:block/vanilla_extras/polished_andesite_bricks"
+    }
+}

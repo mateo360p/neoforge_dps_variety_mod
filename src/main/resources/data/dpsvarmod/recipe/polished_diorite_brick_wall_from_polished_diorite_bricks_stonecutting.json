@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": "dpsvarmod:polished_diorite_bricks",
+    "result": {
+        "count": 1,
+        "id": "dpsvarmod:polished_diorite_brick_wall"
+    }
+}

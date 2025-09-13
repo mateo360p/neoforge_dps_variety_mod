@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": "dpsvarmod:sandstone_bricks",
+    "result": {
+        "count": 1,
+        "id": "dpsvarmod:sandstone_brick_wall"
+    }
+}

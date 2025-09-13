@@ -92,7 +92,7 @@ public class DPsBlocks {
             (properties) -> new WallBlock(properties.mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.25F, 4.2F).sound(SoundType.BASALT)));
     public static final DeferredBlock<Block> POLISHED_BASALT_STAIRS = registerBlockItem("polished_basalt_stairs",
             (properties) -> new StairBlock(Blocks.POLISHED_BASALT.defaultBlockState(),
-                    properties));
+                    properties.mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.25F, 4.2F).sound(SoundType.BASALT)));
     public static final DeferredBlock<Block> POLISHED_BASALT_SLAB = registerBlockItem("polished_basalt_slab",
             (properties) -> new SlabBlock(properties.mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.25F, 4.2F).sound(SoundType.BASALT)));
 
@@ -122,6 +122,90 @@ public class DPsBlocks {
             (properties) -> new SlabBlock(properties.mapColor(MapColor.QUARTZ).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
     public static final DeferredBlock<Block> QUARTZ_BRICK_WALL = registerBlockItem("quartz_brick_wall",
             (properties) -> new WallBlock(properties.mapColor(MapColor.QUARTZ).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
+
+    public static final DeferredBlock<Block> POLISHED_GRANITE_BRICKS = registerBlockItem("polished_granite_bricks",
+            (properties) -> new Block(properties.mapColor(MapColor.DIRT).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+    public static final DeferredBlock<Block> POLISHED_GRANITE_BRICK_STAIRS = registerBlockItem("polished_granite_brick_stairs",
+            (properties) -> new StairBlock(DPsBlocks.POLISHED_GRANITE_BRICKS.get().defaultBlockState(),
+                    properties.mapColor(MapColor.DIRT).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+    public static final DeferredBlock<Block> POLISHED_GRANITE_BRICK_SLAB = registerBlockItem("polished_granite_brick_slab",
+            (properties) -> new SlabBlock(properties.mapColor(MapColor.DIRT).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+    public static final DeferredBlock<Block> POLISHED_GRANITE_BRICK_WALL = registerBlockItem("polished_granite_brick_wall",
+            (properties) -> new WallBlock(properties.mapColor(MapColor.DIRT).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+
+    public static final DeferredBlock<Block> POLISHED_DIORITE_BRICKS = registerBlockItem("polished_diorite_bricks",
+            (properties) -> new Block(properties.mapColor(MapColor.QUARTZ).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+    public static final DeferredBlock<Block> POLISHED_DIORITE_BRICK_STAIRS = registerBlockItem("polished_diorite_brick_stairs",
+            (properties) -> new StairBlock(DPsBlocks.POLISHED_DIORITE_BRICKS.get().defaultBlockState(),
+                    properties.mapColor(MapColor.QUARTZ).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+    public static final DeferredBlock<Block> POLISHED_DIORITE_BRICK_SLAB = registerBlockItem("polished_diorite_brick_slab",
+            (properties) -> new SlabBlock(properties.mapColor(MapColor.QUARTZ).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+    public static final DeferredBlock<Block> POLISHED_DIORITE_BRICK_WALL = registerBlockItem("polished_diorite_brick_wall",
+            (properties) -> new WallBlock(properties.mapColor(MapColor.QUARTZ).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+
+    public static final DeferredBlock<Block> POLISHED_ANDESITE_BRICKS = registerBlockItem("polished_andesite_bricks",
+            (properties) -> new Block(properties.mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+    public static final DeferredBlock<Block> POLISHED_ANDESITE_BRICK_STAIRS = registerBlockItem("polished_andesite_brick_stairs",
+            (properties) -> new StairBlock(DPsBlocks.POLISHED_ANDESITE_BRICKS.get().defaultBlockState(),
+                    properties.mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+    public static final DeferredBlock<Block> POLISHED_ANDESITE_BRICK_SLAB = registerBlockItem("polished_andesite_brick_slab",
+            (properties) -> new SlabBlock(properties.mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+    public static final DeferredBlock<Block> POLISHED_ANDESITE_BRICK_WALL = registerBlockItem("polished_andesite_brick_wall",
+            (properties) -> new WallBlock(properties.mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+
+    public static final DeferredBlock<Block> POLISHED_BASALT_BRICKS = registerBlockItem("polished_basalt_bricks",
+            (properties) -> new Block(properties.mapColor(MapColor.COLOR_BLACK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)
+                    .sound(SoundType.BASALT)));
+    public static final DeferredBlock<Block> POLISHED_BASALT_BRICK_STAIRS = registerBlockItem("polished_basalt_brick_stairs",
+            (properties) -> new StairBlock(DPsBlocks.POLISHED_BASALT_BRICKS.get().defaultBlockState(),
+                    properties.mapColor(MapColor.COLOR_BLACK)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)
+                            .sound(SoundType.BASALT)));
+    public static final DeferredBlock<Block> POLISHED_BASALT_BRICK_SLAB = registerBlockItem("polished_basalt_brick_slab",
+            (properties) -> new SlabBlock(properties.mapColor(MapColor.COLOR_BLACK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)
+                    .sound(SoundType.BASALT)));
+    public static final DeferredBlock<Block> POLISHED_BASALT_BRICK_WALL = registerBlockItem("polished_basalt_brick_wall",
+            (properties) -> new WallBlock(properties.mapColor(MapColor.COLOR_BLACK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)
+                    .sound(SoundType.BASALT)));
+
+    public static final DeferredBlock<Block> SANDSTONE_BRICKS = registerBlockItem("sandstone_bricks",
+            (properties) -> new Block(properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
+    public static final DeferredBlock<Block> SANDSTONE_BRICK_STAIRS = registerBlockItem("sandstone_brick_stairs",
+            (properties) -> new StairBlock(DPsBlocks.SANDSTONE_BRICKS.get().defaultBlockState(),
+                    properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
+    public static final DeferredBlock<Block> SANDSTONE_BRICK_SLAB = registerBlockItem("sandstone_brick_slab",
+            (properties) -> new SlabBlock(properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
+    public static final DeferredBlock<Block> SANDSTONE_BRICK_WALL = registerBlockItem("sandstone_brick_wall",
+            (properties) -> new WallBlock(properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
+
+    public static final DeferredBlock<Block> RED_SANDSTONE_BRICKS = registerBlockItem("red_sandstone_bricks",
+            (properties) -> new Block(properties.mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
+    public static final DeferredBlock<Block> RED_SANDSTONE_BRICK_STAIRS = registerBlockItem("red_sandstone_brick_stairs",
+            (properties) -> new StairBlock(DPsBlocks.RED_SANDSTONE_BRICKS.get().defaultBlockState(),
+                    properties.mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
+    public static final DeferredBlock<Block> RED_SANDSTONE_BRICK_SLAB = registerBlockItem("red_sandstone_brick_slab",
+            (properties) -> new SlabBlock(properties.mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
+    public static final DeferredBlock<Block> RED_SANDSTONE_BRICK_WALL = registerBlockItem("red_sandstone_brick_wall",
+            (properties) -> new WallBlock(properties.mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
+
+    public static final DeferredBlock<Block> SMOOTH_SANDSTONE_WALL = registerBlockItem("smooth_sandstone_wall",
+            (properties) -> new WallBlock(properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
+    public static final DeferredBlock<Block> RED_SMOOTH_SANDSTONE_WALL = registerBlockItem("red_smooth_sandstone_wall",
+            (properties) -> new WallBlock(properties.mapColor(MapColor.COLOR_ORANGE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(2.0F, 6.0F)));
 
     public static <B extends Block> DeferredBlock<B> registerBlockItem(String name, Function<BlockBehaviour.Properties, ? extends B> func) {
         DeferredBlock<B> daBlock = registerBlock(name, func);

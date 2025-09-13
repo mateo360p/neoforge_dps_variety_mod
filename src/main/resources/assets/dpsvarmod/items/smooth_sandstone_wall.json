@@ -1,0 +1,6 @@
+{
+    "model": {
+        "type": "minecraft:model",
+        "model": "dpsvarmod:block/vanilla_extras/smooth_sandstone_wall_inventory"
+    }
+}
