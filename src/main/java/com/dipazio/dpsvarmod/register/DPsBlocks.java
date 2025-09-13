@@ -201,12 +201,115 @@ public class DPsBlocks {
 
     public static final DeferredBlock<Block> SMOOTH_SANDSTONE_WALL = registerBlockItem("smooth_sandstone_wall",
             (properties) -> new WallBlock(properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
-    public static final DeferredBlock<Block> RED_SMOOTH_SANDSTONE_WALL = registerBlockItem("red_smooth_sandstone_wall",
+    public static final DeferredBlock<Block> SMOOTH_RED_SANDSTONE_WALL = registerBlockItem("smooth_red_sandstone_wall",
             (properties) -> new WallBlock(properties.mapColor(MapColor.COLOR_ORANGE)
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
                     .strength(2.0F, 6.0F)));
 
+    public static final DeferredBlock<Block> POLISHED_CALCITE_BRICKS = registerBlockItem("polished_calcite_bricks",
+            (properties) -> new Block(properties.mapColor(MapColor.TERRACOTTA_WHITE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.CALCITE)
+                    .requiresCorrectToolForDrops()
+                    .strength(0.75F)));
+    public static final DeferredBlock<Block> POLISHED_CALCITE_BRICK_STAIRS = registerBlockItem("polished_calcite_brick_stairs",
+            (properties) -> new StairBlock(DPsBlocks.POLISHED_CALCITE_BRICKS.get().defaultBlockState(),
+                    properties.mapColor(MapColor.TERRACOTTA_WHITE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .sound(SoundType.CALCITE)
+                            .requiresCorrectToolForDrops()
+                            .strength(0.75F)));
+    public static final DeferredBlock<Block> POLISHED_CALCITE_BRICK_SLAB = registerBlockItem("polished_calcite_brick_slab",
+            (properties) -> new SlabBlock(properties.mapColor(MapColor.TERRACOTTA_WHITE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.CALCITE)
+                    .requiresCorrectToolForDrops()
+                    .strength(0.75F)));
+    public static final DeferredBlock<Block> POLISHED_CALCITE_BRICK_WALL = registerBlockItem("polished_calcite_brick_wall",
+            (properties) -> new WallBlock(properties.mapColor(MapColor.TERRACOTTA_WHITE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.CALCITE)
+                    .requiresCorrectToolForDrops()
+                    .strength(0.75F)));
+
+    public static final DeferredBlock<Block> POLISHED_DRIPSTONE_BRICKS = registerBlockItem("polished_dripstone_bricks",
+            (properties) -> new Block(properties.mapColor(MapColor.TERRACOTTA_BROWN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DRIPSTONE_BLOCK)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.5F, 1.0F)));
+    public static final DeferredBlock<Block> POLISHED_DRIPSTONE_BRICK_STAIRS = registerBlockItem("polished_dripstone_brick_stairs",
+            (properties) -> new StairBlock(DPsBlocks.POLISHED_DRIPSTONE_BRICKS.get().defaultBlockState(),
+                    properties.mapColor(MapColor.TERRACOTTA_BROWN)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .sound(SoundType.DRIPSTONE_BLOCK)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.5F, 1.0F)));
+    public static final DeferredBlock<Block> POLISHED_DRIPSTONE_BRICK_SLAB = registerBlockItem("polished_dripstone_brick_slab",
+            (properties) -> new SlabBlock(properties.mapColor(MapColor.TERRACOTTA_BROWN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DRIPSTONE_BLOCK)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.5F, 1.0F)));
+    public static final DeferredBlock<Block> POLISHED_DRIPSTONE_BRICK_WALL = registerBlockItem("polished_dripstone_brick_wall",
+            (properties) -> new WallBlock(properties.mapColor(MapColor.TERRACOTTA_BROWN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DRIPSTONE_BLOCK)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.5F, 1.0F)));
+
+    public static final DeferredBlock<Block> POLISHED_CALCITE = registerBlockItem("polished_calcite",
+            (properties) -> new Block(properties.mapColor(MapColor.TERRACOTTA_WHITE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.CALCITE)
+                    .requiresCorrectToolForDrops()
+                    .strength(0.75F)));
+    public static final DeferredBlock<Block> POLISHED_CALCITE_STAIRS = registerBlockItem("polished_calcite_stairs",
+            (properties) -> new StairBlock(DPsBlocks.POLISHED_CALCITE.get().defaultBlockState(),
+                    properties.mapColor(MapColor.TERRACOTTA_WHITE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .sound(SoundType.CALCITE)
+                            .requiresCorrectToolForDrops()
+                            .strength(0.75F)));
+    public static final DeferredBlock<Block> POLISHED_CALCITE_SLAB = registerBlockItem("polished_calcite_slab",
+            (properties) -> new SlabBlock(properties.mapColor(MapColor.TERRACOTTA_WHITE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.CALCITE)
+                    .requiresCorrectToolForDrops()
+                    .strength(0.75F)));
+    public static final DeferredBlock<Block> POLISHED_CALCITE_WALL = registerBlockItem("polished_calcite_wall",
+            (properties) -> new WallBlock(properties.mapColor(MapColor.TERRACOTTA_WHITE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.CALCITE)
+                    .requiresCorrectToolForDrops()
+                    .strength(0.75F)));
+
+    public static final DeferredBlock<Block> POLISHED_DRIPSTONE_BLOCK = registerBlockItem("polished_dripstone_block",
+            (properties) -> new Block(properties.mapColor(MapColor.TERRACOTTA_BROWN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DRIPSTONE_BLOCK)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.5F, 1.0F)));
+    public static final DeferredBlock<Block> POLISHED_DRIPSTONE_BLOCK_STAIRS = registerBlockItem("polished_dripstone_block_stairs",
+            (properties) -> new StairBlock(DPsBlocks.POLISHED_DRIPSTONE_BLOCK.get().defaultBlockState(),
+                    properties.mapColor(MapColor.TERRACOTTA_BROWN)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .sound(SoundType.DRIPSTONE_BLOCK)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.5F, 1.0F)));
+    public static final DeferredBlock<Block> POLISHED_DRIPSTONE_BLOCK_SLAB = registerBlockItem("polished_dripstone_block_slab",
+            (properties) -> new SlabBlock(properties.mapColor(MapColor.TERRACOTTA_BROWN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DRIPSTONE_BLOCK)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.5F, 1.0F)));
+    public static final DeferredBlock<Block> POLISHED_DRIPSTONE_BLOCK_WALL = registerBlockItem("polished_dripstone_block_wall",
+            (properties) -> new WallBlock(properties.mapColor(MapColor.TERRACOTTA_BROWN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DRIPSTONE_BLOCK)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.5F, 1.0F)));
     public static <B extends Block> DeferredBlock<B> registerBlockItem(String name, Function<BlockBehaviour.Properties, ? extends B> func) {
         DeferredBlock<B> daBlock = registerBlock(name, func);
         DPsItems.ITEMS.registerItem(name, (properties) -> new BlockItem(daBlock.get(), properties.useBlockDescriptionPrefix()));

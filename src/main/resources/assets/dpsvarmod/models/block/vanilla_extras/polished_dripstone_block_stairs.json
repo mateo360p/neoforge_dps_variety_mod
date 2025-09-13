@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/stairs",
+    "textures": {
+        "bottom": "dpsvarmod:block/vanilla_extras/polished_dripstone_block",
+        "side": "dpsvarmod:block/vanilla_extras/polished_dripstone_block",
+        "top": "dpsvarmod:block/vanilla_extras/polished_dripstone_block"
+    }
+}

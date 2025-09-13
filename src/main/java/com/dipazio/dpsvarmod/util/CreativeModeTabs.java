@@ -107,13 +107,33 @@ public class CreativeModeTabs {
                         output.accept(DPsBlocks.DEEPSLATE_STAIRS);
                         output.accept(DPsBlocks.DEEPSLATE_WALL);
 
+                        output.accept(DPsBlocks.CALCITE_STAIRS);
+                        output.accept(DPsBlocks.CALCITE_SLAB);
+                        output.accept(DPsBlocks.CALCITE_WALL);
+
+                        output.accept(DPsBlocks.POLISHED_CALCITE);
+                        output.accept(DPsBlocks.POLISHED_CALCITE_STAIRS);
+                        output.accept(DPsBlocks.POLISHED_CALCITE_SLAB);
+                        output.accept(DPsBlocks.POLISHED_CALCITE_WALL);
+
+                        output.accept(DPsBlocks.POLISHED_CALCITE_BRICKS);
+                        output.accept(DPsBlocks.POLISHED_CALCITE_BRICK_STAIRS);
+                        output.accept(DPsBlocks.POLISHED_CALCITE_BRICK_SLAB);
+                        output.accept(DPsBlocks.POLISHED_CALCITE_BRICK_WALL);
+
                         output.accept(DPsBlocks.DRIPSTONE_BLOCK_STAIRS);
                         output.accept(DPsBlocks.DRIPSTONE_BLOCK_SLAB);
                         output.accept(DPsBlocks.DRIPSTONE_BLOCK_WALL);
 
-                        output.accept(DPsBlocks.CALCITE_STAIRS);
-                        output.accept(DPsBlocks.CALCITE_SLAB);
-                        output.accept(DPsBlocks.CALCITE_WALL);
+                        output.accept(DPsBlocks.POLISHED_DRIPSTONE_BLOCK);
+                        output.accept(DPsBlocks.POLISHED_DRIPSTONE_BLOCK_STAIRS);
+                        output.accept(DPsBlocks.POLISHED_DRIPSTONE_BLOCK_SLAB);
+                        output.accept(DPsBlocks.POLISHED_DRIPSTONE_BLOCK_WALL);
+
+                        output.accept(DPsBlocks.POLISHED_DRIPSTONE_BRICKS);
+                        output.accept(DPsBlocks.POLISHED_DRIPSTONE_BRICK_STAIRS);
+                        output.accept(DPsBlocks.POLISHED_DRIPSTONE_BRICK_SLAB);
+                        output.accept(DPsBlocks.POLISHED_DRIPSTONE_BRICK_WALL);
 
                         output.accept(DPsBlocks.BASALT_STAIRS);
                         output.accept(DPsBlocks.BASALT_SLAB);
@@ -138,7 +158,7 @@ public class CreativeModeTabs {
                         output.accept(DPsBlocks.SANDSTONE_BRICK_SLAB);
                         output.accept(DPsBlocks.SANDSTONE_BRICK_WALL);
 
-                        output.accept(DPsBlocks.RED_SMOOTH_SANDSTONE_WALL);
+                        output.accept(DPsBlocks.SMOOTH_RED_SANDSTONE_WALL);
                         output.accept(DPsBlocks.RED_SANDSTONE_BRICKS);
                         output.accept(DPsBlocks.RED_SANDSTONE_BRICK_STAIRS);
                         output.accept(DPsBlocks.RED_SANDSTONE_BRICK_SLAB);

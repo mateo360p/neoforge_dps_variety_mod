@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/slab_top",
+    "textures": {
+        "bottom": "dpsvarmod:block/vanilla_extras/polished_dripstone_bricks",
+        "side": "dpsvarmod:block/vanilla_extras/polished_dripstone_bricks",
+        "top": "dpsvarmod:block/vanilla_extras/polished_dripstone_bricks"
+    }
+}

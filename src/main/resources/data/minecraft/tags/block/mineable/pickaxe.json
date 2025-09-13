@@ -61,6 +61,22 @@
         "dpsvarmod:red_sandstone_brick_slab",
         "dpsvarmod:red_sandstone_brick_wall",
         "dpsvarmod:smooth_sandstone_wall",
-        "dpsvarmod:red_smooth_sandstone_wall"
+        "dpsvarmod:smooth_red_sandstone_wall",
+        "dpsvarmod:polished_calcite_bricks",
+        "dpsvarmod:polished_calcite_brick_stairs",
+        "dpsvarmod:polished_calcite_brick_slab",
+        "dpsvarmod:polished_calcite_brick_wall",
+        "dpsvarmod:polished_dripstone_bricks",
+        "dpsvarmod:polished_dripstone_brick_stairs",
+        "dpsvarmod:polished_dripstone_brick_slab",
+        "dpsvarmod:polished_dripstone_brick_wall",
+        "dpsvarmod:polished_calcite",
+        "dpsvarmod:polished_calcite_stairs",
+        "dpsvarmod:polished_calcite_slab",
+        "dpsvarmod:polished_calcite_wall",
+        "dpsvarmod:polished_dripstone_block",
+        "dpsvarmod:polished_dripstone_block_stairs",
+        "dpsvarmod:polished_dripstone_block_slab",
+        "dpsvarmod:polished_dripstone_block_wall"
     ]
 }

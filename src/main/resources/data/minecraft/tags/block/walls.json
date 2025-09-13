@@ -22,6 +22,10 @@
         "dpsvarmod:sandstone_brick_wall",
         "dpsvarmod:red_sandstone_brick_wall",
         "dpsvarmod:smooth_sandstone_wall",
-        "dpsvarmod:red_smooth_sandstone_wall"
+        "dpsvarmod:smooth_red_sandstone_wall",
+        "dpsvarmod:polished_calcite_brick_wall",
+        "dpsvarmod:polished_dripstone_brick_wall",
+        "dpsvarmod:polished_calcite_wall",
+        "dpsvarmod:polished_dripstone_block_wall"
     ]
 }

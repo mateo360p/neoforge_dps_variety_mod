@@ -11,11 +11,11 @@
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "name": "dpsvarmod:red_smooth_sandstone_wall"
+                    "name": "dpsvarmod:smooth_red_sandstone_wall"
                 }
             ],
             "rolls": 1.0
         }
     ],
-    "random_sequence": "dpsvarmod:blocks/red_smooth_sandstone_wall"
+    "random_sequence": "dpsvarmod:blocks/smooth_red_sandstone_wall"
 }

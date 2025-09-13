@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/outer_stairs",
+    "textures": {
+        "bottom": "dpsvarmod:block/vanilla_extras/polished_calcite_bricks",
+        "side": "dpsvarmod:block/vanilla_extras/polished_calcite_bricks",
+        "top": "dpsvarmod:block/vanilla_extras/polished_calcite_bricks"
+    }
+}

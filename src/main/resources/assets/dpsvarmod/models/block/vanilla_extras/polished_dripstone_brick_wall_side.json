@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/template_wall_side",
+    "textures": {
+        "wall": "dpsvarmod:block/vanilla_extras/polished_dripstone_bricks"
+    }
+}

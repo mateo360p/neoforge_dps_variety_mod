@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": "dpsvarmod:polished_dripstone_block",
+    "result": {
+        "count": 1,
+        "id": "dpsvarmod:polished_dripstone_block_stairs"
+    }
+}

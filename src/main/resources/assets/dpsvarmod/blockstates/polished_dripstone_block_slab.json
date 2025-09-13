@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "dpsvarmod:block/vanilla_extras/polished_dripstone_block_slab"
+        },
+        "type=double": {
+            "model": "dpsvarmod:block/vanilla_extras/polished_dripstone_block"
+        },
+        "type=top": {
+            "model": "dpsvarmod:block/vanilla_extras/polished_dripstone_block_slab_top"
+        }
+    }
+}

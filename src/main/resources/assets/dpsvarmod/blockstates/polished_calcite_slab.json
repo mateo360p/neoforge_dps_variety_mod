@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "dpsvarmod:block/vanilla_extras/polished_calcite_slab"
+        },
+        "type=double": {
+            "model": "dpsvarmod:block/vanilla_extras/polished_calcite"
+        },
+        "type=top": {
+            "model": "dpsvarmod:block/vanilla_extras/polished_calcite_slab_top"
+        }
+    }
+}
